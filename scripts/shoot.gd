@@ -9,55 +9,55 @@ func _ready() -> void:
 	pass
 
 func _process(delta) -> void:
-	## chamada da função para mover a bala
+	# chamada da função para mover a bala
 	moveShoot(delta);
 	
 ## função para mover a bala
 func moveShoot(delta) -> void:
-	## pega uma vetor RIGHT e manipula com a rotação
+	# pega uma vetor RIGHT e manipula com a rotação
 	var _direction = Vector2.RIGHT.rotated(rotation);
-	## incrementa a posição do objeto baseado no valor de _direction * uma velocidade * delta
+	# incrementa a posição do objeto baseado no valor de _direction * uma velocidade * delta
 	global_position += _direction * speedShoot * delta;
 
 ## quando o objeto instanciado sair da area delimitada (area total da tela)
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free();   # exclue a instância do objeto
 
-## quando um corpo colidir com a bala
+##corpo colidir com a bala
 func _on_body_entered(body):
-	## referência a lisat de inimigos atingidos
+	# referência a lisat de inimigos atingidos
 	var _listEnemies = Global.enemiesHit;
-	## se o corpo for uma instância da classe Enemy
+	# se o corpo for uma instância da classe Enemy
 	if is_instance_of(body, Enemy):
-		## apaga a instância da bala
+		# apaga a instância da bala
 		queue_free();
-		## paraliza o inimigo:
+		# paraliza o inimigo:
 		body.canMove = false;
-		## remove a camada layer da colisão do inimigo, assim não é possivel atirar nele novamente
+		# remove a camada layer da colisão do inimigo, assim não é possivel atirar nele novamente
 		body.collision_layer = 0;
-		## guarda na lista de inimigos atingidos o inimigo atual
+		# guarda na lista de inimigos atingidos o inimigo atual
 		_listEnemies.append(body);
 		
 		## se ja tiverem dois inimigos atingidos
 		if len(_listEnemies) == 2:
-			## checagem se os inimigos da lista são compatíveis
+			# checagem se os inimigos da lista são compatíveis
 			var _theTwoEnemiesIsCompatible: bool = _listEnemies[0].compatible.identity == _listEnemies[1].compatible.identity;
 			
-			## se forem compatíevis
+			# se forem compatíevis
 			if _theTwoEnemiesIsCompatible:
-				## eleimina os inimigos atingidos da partida
+				# eleimina os inimigos atingidos da partida
 				for enemy in _listEnemies:
 					enemy.queue_free();
-				## limpa a lista de inimigos atingidos
+				# limpa a lista de inimigos atingidos
 				_listEnemies.clear();
 				return
 			
-			## volta a movimentação dos inimigos atingidos novamente
+			# volta a movimentação dos inimigos atingidos novamente
 			for enemy in _listEnemies:
 				## adiciona novamente a camada de layer
 				enemy.collision_layer = 2;
 				enemy.canMove = true;
-			## limpa a lista de inimigos atingidos
+			# limpa a lista de inimigos atingidos
 			_listEnemies.clear();
 			
 		

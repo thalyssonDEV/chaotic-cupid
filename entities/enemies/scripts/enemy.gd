@@ -16,24 +16,25 @@ var canMove : bool = true;
 @onready var colision := get_node("CollisionShape2D") as CollisionShape2D;
 
 func _ready() -> void:
-	## pega a referência do player que está na global
+	# pega a referência do player que está na global
 	player = Global.playerNode;
 	
 func _process(delta) -> void:
-	## chamada da função para o inimigo seguir o player
+	# chamada da função para o inimigo seguir o player
 	followPlayer();
+	# se o objeto poder se mover
 	if canMove:
 		move_and_slide();
 	
-	## chamada da função para realizar as animações do inimigo
+	# chamada da função para realizar as animações do inimigo
 	enableAnimation();
 
 ## função que realiza as animações de acordo com o estado atual do inimigo
 func enableAnimation() -> void:
-	## variável booleana para checar se o player está correndo para a direita
+	# variável booleana para checar se o player está correndo para a direita
 	var _isWalkToRight: bool = velocity.x > 0;
 	
-	## se o player estiver correndo para direita
+	# se o player estiver correndo para direita
 	if _isWalkToRight and animation != null:
 		# direção do inimigo aponta para direita
 		animation.flip_h = false;
@@ -45,11 +46,11 @@ func enableAnimation() -> void:
 
 ## função para o inimigo seguir o player
 func followPlayer() -> void:
-	## se o player não poder se mover:
+	# se o player não poder se mover:
 	if !canMove:
 		velocity = Vector2.ZERO;
 		return;
-	## pega a direção do player e armazena na variável
+	# pega a direção do player e armazena na variável
 	var _directionPlayer : Vector2 = position.direction_to(player.global_position);
-	## joga a direção do player multiplicada pela velocidade do inimigo em velocity
+	# joga a direção do player multiplicada pela velocidade do inimigo em velocity
 	velocity = _directionPlayer * speed;

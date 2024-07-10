@@ -12,7 +12,7 @@ func _process(delta):
 		minutes += 1
 		seconds = 0
 		
-	## Define o formato em que o temporizador será exibido na tela
+	# Define o formato em que o temporizador será exibido na tela
 	if seconds < 10 and minutes < 10:
 		$Label.text = "0" + str(minutes) + ":0" + str(seconds);
 	elif minutes > 9 and seconds > 9:
