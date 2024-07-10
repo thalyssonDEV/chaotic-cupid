@@ -1,6 +1,7 @@
-[gd_scene load_steps=40 format=3 uid="uid://kgkbpmskjjvh"]
+[gd_scene load_steps=41 format=3 uid="uid://kgkbpmskjjvh"]
 
 [ext_resource type="Texture2D" uid="uid://cb34y0aknf3m1" path="res://entities/player/assets/anaimations/death/death_0.png" id="1_knwtq"]
+[ext_resource type="Script" path="res://entities/player/scripts/player.gd" id="1_vspos"]
 [ext_resource type="Texture2D" uid="uid://do0ffscgur78o" path="res://entities/player/assets/anaimations/death/death_1.png" id="2_xjxs5"]
 [ext_resource type="Texture2D" uid="uid://di7enhgprh3ea" path="res://entities/player/assets/anaimations/death/death_2.png" id="3_l7l6y"]
 [ext_resource type="Texture2D" uid="uid://mojib3gm76pl" path="res://entities/player/assets/anaimations/death/death_3.png" id="4_mrvyk"]
@@ -37,10 +38,6 @@
 [ext_resource type="Texture2D" uid="uid://dlw4ej05vpi6v" path="res://entities/player/assets/anaimations/walk/walk_5.png" id="35_nujpl"]
 [ext_resource type="Texture2D" uid="uid://c8fcrgxw0fyhu" path="res://entities/player/assets/anaimations/walk/walk_6.png" id="36_c62hx"]
 [ext_resource type="Texture2D" uid="uid://cprju5s3a44qe" path="res://entities/player/assets/anaimations/walk/walk_7.png" id="37_cisjl"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j74bw"]
-radius = 3.0
-height = 10.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bvyh1"]
 animations = [{
@@ -195,16 +192,22 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j74bw"]
+radius = 3.0
+height = 12.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -6)
-shape = SubResource("CapsuleShape2D_j74bw")
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(105, 67)
+motion_mode = 1
+script = ExtResource("1_vspos")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -13)
-scale = Vector2(0.016, 0.016)
+scale = Vector2(0.02, 0.02)
 sprite_frames = SubResource("SpriteFrames_bvyh1")
-animation = &"idle"
+animation = &"walk"
 autoplay = "idle"
-frame_progress = 0.797548
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_j74bw")
