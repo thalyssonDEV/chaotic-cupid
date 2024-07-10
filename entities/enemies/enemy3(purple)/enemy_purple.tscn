@@ -92,6 +92,8 @@ radius = 3.0
 height = 10.0
 
 [node name="EnemyPurple" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_aglsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -99,7 +101,7 @@ scale = Vector2(0.02, 0.02)
 sprite_frames = SubResource("SpriteFrames_d0d6k")
 animation = &"walk"
 autoplay = "walk"
-frame_progress = 0.766027
+frame_progress = 0.276064
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 9)

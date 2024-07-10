@@ -8,13 +8,15 @@
 [node name="Teste" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_h8o3r")]
-position = Vector2(97, 105)
+position = Vector2(156, 104)
 
 [node name="EnemyRed" parent="." instance=ExtResource("2_50l5b")]
-position = Vector2(213, 49)
+position = Vector2(311, 29)
 
 [node name="EnemyGreen" parent="." instance=ExtResource("3_eyeub")]
-position = Vector2(36, 13)
+position = Vector2(28, 12)
 
 [node name="EnemyPurple" parent="." instance=ExtResource("4_bs3h8")]
-position = Vector2(172, 134)
+position = Vector2(307, 170)
+
+[node name="Shoots" type="Node2D" parent="."]
