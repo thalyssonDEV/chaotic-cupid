@@ -13,13 +13,19 @@ position = Vector2(156, 104)
 [node name="EnemyRed" parent="." instance=ExtResource("2_50l5b")]
 position = Vector2(311, 29)
 
+[node name="EnemyRed2" parent="." instance=ExtResource("2_50l5b")]
+position = Vector2(74, 161)
+
 [node name="EnemyGreen" parent="." instance=ExtResource("3_eyeub")]
 position = Vector2(28, 12)
 
 [node name="EnemyGreen2" parent="." instance=ExtResource("3_eyeub")]
-position = Vector2(25, 63)
+position = Vector2(180, 30)
 
 [node name="EnemyPurple" parent="." instance=ExtResource("4_bs3h8")]
 position = Vector2(307, 170)
+
+[node name="EnemyPurple2" parent="." instance=ExtResource("4_bs3h8")]
+position = Vector2(322, 103)
 
 [node name="Shoots" type="Node2D" parent="."]

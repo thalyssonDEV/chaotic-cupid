@@ -10,18 +10,20 @@ class_name Enemy
 var canMove : bool = true;
 ## variável para ter uma referência ao player
 @onready var player = null;
-## referência ao nó d animações do inimigo
+## referência ao nó de animações do inimigo
 @onready var animation := get_node("AnimatedSprite2D");
+## referência ao collisionShape2D do inimigo
+@onready var colision := get_node("CollisionShape2D") as CollisionShape2D;
 
 func _ready() -> void:
 	## pega a referência do player que está na global
 	player = Global.playerNode;
 	
-	
 func _process(delta) -> void:
 	## chamada da função para o inimigo seguir o player
 	followPlayer();
-	move_and_slide()
+	if canMove:
+		move_and_slide();
 	
 	## chamada da função para realizar as animações do inimigo
 	enableAnimation();

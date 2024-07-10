@@ -92,13 +92,12 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_18ite"]
-radius = 3.0
-height = 10.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4vi08"]
+size = Vector2(6, 10)
 
 [node name="EnemyGreen" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 2
-collision_mask = 2
+collision_mask = 11
 script = ExtResource("1_afv3l")
 compatible = SubResource("Resource_4jxnq")
 
@@ -110,5 +109,5 @@ autoplay = "walk"
 frame_progress = 0.0047743
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 9)
-shape = SubResource("CapsuleShape2D_18ite")
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_4vi08")

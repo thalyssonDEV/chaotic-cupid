@@ -33,6 +33,8 @@ func _on_body_entered(body):
 		queue_free();
 		## paraliza o inimigo:
 		body.canMove = false;
+		## remove a camada layer da colisão do inimigo, assim não é possivel atirar nele novamente
+		body.collision_layer = 0;
 		## guarda na lista de inimigos atingidos o inimigo atual
 		_listEnemies.append(body);
 		
@@ -52,6 +54,8 @@ func _on_body_entered(body):
 			
 			## volta a movimentação dos inimigos atingidos novamente
 			for enemy in _listEnemies:
+				## adiciona novamente a camada de layer
+				enemy.collision_layer = 2;
 				enemy.canMove = true;
 			## limpa a lista de inimigos atingidos
 			_listEnemies.clear();

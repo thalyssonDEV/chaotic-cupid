@@ -7,7 +7,7 @@ size = Vector2(6, 6)
 
 [node name="Shoot" type="Area2D" groups=["shoots"]]
 collision_layer = 8
-collision_mask = 10
+collision_mask = 2
 script = ExtResource("1_l0w3h")
 
 [node name="ColorRect" type="ColorRect" parent="."]
