@@ -9,7 +9,8 @@ class_name Player;
 @onready var animation := get_node("AnimatedSprite2D") as AnimatedSprite2D;
 
 func _ready() -> void:
-	pass
+	## informa a global que esta classe é o player
+	Global.playerNode = self;
 	
 
 func _process(delta) -> void:

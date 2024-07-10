@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://dk880qg0jnk8k"]
+[gd_scene load_steps=22 format=3 uid="uid://dk880qg0jnk8k"]
 
 [ext_resource type="Texture2D" uid="uid://b4k3r0fj6r6nr" path="res://entities/enemies/enemy1(red)/assets/animations/walk/walk_0.png" id="1_cb02b"]
+[ext_resource type="Script" path="res://entities/enemies/scripts/enemy.gd" id="1_tgfwr"]
 [ext_resource type="Texture2D" uid="uid://bfvdxyta1uj4p" path="res://entities/enemies/enemy1(red)/assets/animations/death/death_0.png" id="1_vpxik"]
 [ext_resource type="Texture2D" uid="uid://blkph53do2icb" path="res://entities/enemies/enemy1(red)/assets/animations/death/death_1.png" id="2_im6q2"]
 [ext_resource type="Texture2D" uid="uid://x33w23fw2g4w" path="res://entities/enemies/enemy1(red)/assets/animations/walk/walk_1.png" id="2_k6jvy"]
@@ -91,13 +92,14 @@ radius = 3.0
 height = 10.0
 
 [node name="EnemyRed" type="CharacterBody2D"]
+script = ExtResource("1_tgfwr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.02, 0.02)
 sprite_frames = SubResource("SpriteFrames_08d3s")
 animation = &"walk"
 autoplay = "walk"
-frame_progress = 0.629073
+frame_progress = 0.560437
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 9)
