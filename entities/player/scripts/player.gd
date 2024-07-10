@@ -18,15 +18,15 @@ func _process(delta) -> void:
 	move(delta);
 	move_and_slide();
 	
-	## chamada da função para realizar as animações do plauyer
+	## chamada da função para realizar as animações do player
 	enableAnimations();
 	
 
 ## função para ativar as animações
 func enableAnimations() -> void:
-	## variáveis booleanas para cheacar se o player está parado
+	## variável booleana para checar se o player está parado
 	var _isIdle: bool = velocity == Vector2.ZERO;
-	## variáveis booleanas para cheacar se o player está correndo para a direita
+	## variável booleana para checar se o player está correndo para a direita
 	var _isWalkToRight: bool = velocity.x > 0;
 	
 	## se o player não estiver parado

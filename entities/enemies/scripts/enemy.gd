@@ -19,8 +19,28 @@ func _process(delta) -> void:
 	## chamada da função para o inimigo seguir o player
 	followPlayer();
 	move_and_slide()
+	
+	## chamada da função para realizar as animações do inimigo
+	enableAnimation();
+
+## função que realiza as animações de acordo com o estado atual do inimigo
+func enableAnimation() -> void:
+	## variável booleana para checar se o player está correndo para a direita
+	var _isWalkToRight: bool = velocity.x > 0;
+	
+	## se o player estiver correndo para direita
+	if _isWalkToRight and animation != null:
+		# direção do inimigo aponta para direita
+		animation.flip_h = false;
+		animation.play("walk");
+	else:
+		# direção do inimigo aponta para a esquerda
+		animation.flip_h = true;
+		animation.play("walk");
 
 ## função para o inimigo seguir o player
 func followPlayer() -> void:
+	## pega a direção do player e armazena na variável
 	var _directionPlayer : Vector2 = position.direction_to(player.global_position);
+	## joga a direção do player multiplicada pela velocidade do inimigo em velocity
 	velocity = _directionPlayer * speed;
