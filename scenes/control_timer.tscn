@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5mjyuin7ow3j"]
+
+[ext_resource type="Script" path="res://scripts/ControlTimer.gd" id="1_o5ah1"]
+[ext_resource type="FontFile" uid="uid://oge2x1eyump1" path="res://assets/Fonts/fonts/connection/Connection.otf" id="2_5h1sv"]
+
+[node name="ControlTimer" type="Control"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -115.0
+offset_right = 115.0
+offset_bottom = 119.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_o5ah1")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -97.5
+offset_right = 97.5
+offset_bottom = 91.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.405003, 1, 0.964627, 1)
+theme_override_fonts/font = ExtResource("2_5h1sv")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
