@@ -39,10 +39,6 @@
 [ext_resource type="Texture2D" uid="uid://c8fcrgxw0fyhu" path="res://entities/player/assets/anaimations/walk/walk_6.png" id="36_c62hx"]
 [ext_resource type="Texture2D" uid="uid://cprju5s3a44qe" path="res://entities/player/assets/anaimations/walk/walk_7.png" id="37_cisjl"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j74bw"]
-radius = 3.0
-height = 10.0
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_bvyh1"]
 animations = [{
 "frames": [{
@@ -196,20 +192,24 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j74bw"]
+radius = 3.0
+height = 12.0
+
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(105, 67)
 motion_mode = 1
 script = ExtResource("1_vspos")
 speed = 5000.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -6)
-shape = SubResource("CapsuleShape2D_j74bw")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -13)
-scale = Vector2(0.026, 0.026)
+scale = Vector2(0.02, 0.02)
 sprite_frames = SubResource("SpriteFrames_bvyh1")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.260599
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_j74bw")
