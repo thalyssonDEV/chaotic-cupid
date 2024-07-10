@@ -1,0 +1,104 @@
+[gd_scene load_steps=21 format=3 uid="uid://bc8tajkj20xr8"]
+
+[ext_resource type="Texture2D" uid="uid://cyteseupikaet" path="res://entities/enemies/enemy2(green)/assets/animations/death/death_0.png" id="1_iyjnj"]
+[ext_resource type="Texture2D" uid="uid://c7cqtxky6l0kr" path="res://entities/enemies/enemy2(green)/assets/animations/death/death_1.png" id="2_6lawm"]
+[ext_resource type="Texture2D" uid="uid://ci6w37mul0jh2" path="res://entities/enemies/enemy2(green)/assets/animations/death/death_2.png" id="3_2mi6p"]
+[ext_resource type="Texture2D" uid="uid://dh237fpkxki0x" path="res://entities/enemies/enemy2(green)/assets/animations/death/death_3.png" id="4_01ok2"]
+[ext_resource type="Texture2D" uid="uid://c6l4ixmv8jnd" path="res://entities/enemies/enemy2(green)/assets/animations/death/death_4.png" id="5_7yobc"]
+[ext_resource type="Texture2D" uid="uid://nfd0580gw0jj" path="res://entities/enemies/enemy2(green)/assets/animations/death/death_5.png" id="6_714sm"]
+[ext_resource type="Texture2D" uid="uid://ykhbe3lqbobu" path="res://entities/enemies/enemy2(green)/assets/animations/death/death_6.png" id="7_vmef1"]
+[ext_resource type="Texture2D" uid="uid://oqssl7e8hpof" path="res://entities/enemies/enemy2(green)/assets/animations/death/death_7.png" id="8_dfwbq"]
+[ext_resource type="Texture2D" uid="uid://bu4q3ufv4aqgn" path="res://entities/enemies/enemy2(green)/assets/animations/death/death_8.png" id="9_xqjcr"]
+[ext_resource type="Texture2D" uid="uid://dwxo7qke1j3o8" path="res://entities/enemies/enemy2(green)/assets/animations/death/death_9.png" id="10_v4phf"]
+[ext_resource type="Texture2D" uid="uid://da2t612bsuba7" path="res://entities/enemies/enemy2(green)/assets/animations/walk/walk_0.png" id="11_drea7"]
+[ext_resource type="Texture2D" uid="uid://l5k02hncte1l" path="res://entities/enemies/enemy2(green)/assets/animations/walk/walk_1.png" id="12_ebiap"]
+[ext_resource type="Texture2D" uid="uid://ccesfy464s48u" path="res://entities/enemies/enemy2(green)/assets/animations/walk/walk_2.png" id="13_uthvw"]
+[ext_resource type="Texture2D" uid="uid://ctyc21i4bj6ii" path="res://entities/enemies/enemy2(green)/assets/animations/walk/walk_3.png" id="14_psafc"]
+[ext_resource type="Texture2D" uid="uid://bvmmqsfpnqc3t" path="res://entities/enemies/enemy2(green)/assets/animations/walk/walk_4.png" id="15_rpulm"]
+[ext_resource type="Texture2D" uid="uid://v4fc0hi7dyd4" path="res://entities/enemies/enemy2(green)/assets/animations/walk/walk_5.png" id="16_rse13"]
+[ext_resource type="Texture2D" uid="uid://7xu3va54huf4" path="res://entities/enemies/enemy2(green)/assets/animations/walk/walk_6.png" id="17_muxp1"]
+[ext_resource type="Texture2D" uid="uid://cffu4y3bfjn4q" path="res://entities/enemies/enemy2(green)/assets/animations/walk/walk_7.png" id="18_i6mi5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1bpp5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_iyjnj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6lawm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2mi6p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_01ok2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7yobc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_714sm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vmef1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dfwbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xqjcr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_v4phf")
+}],
+"loop": true,
+"name": &"death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_drea7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ebiap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_uthvw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_psafc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_rpulm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_rse13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_muxp1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_i6mi5")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_18ite"]
+radius = 3.0
+height = 10.0
+
+[node name="EnemyGreen" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.02, 0.02)
+sprite_frames = SubResource("SpriteFrames_1bpp5")
+animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.49329
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9)
+shape = SubResource("CapsuleShape2D_18ite")
