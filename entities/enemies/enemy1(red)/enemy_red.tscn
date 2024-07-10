@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dk880qg0jnk8k"]
+[gd_scene load_steps=30 format=3 uid="uid://dk880qg0jnk8k"]
 
 [ext_resource type="Texture2D" uid="uid://b4k3r0fj6r6nr" path="res://entities/enemies/enemy1(red)/assets/animations/walk/walk_0.png" id="1_cb02b"]
 [ext_resource type="Script" path="res://entities/enemies/scripts/enemy.gd" id="1_tgfwr"]
@@ -20,6 +20,12 @@
 [ext_resource type="Texture2D" uid="uid://c2wi2c8f1t30v" path="res://entities/enemies/enemy1(red)/assets/animations/walk/walk_7.png" id="8_y7e6c"]
 [ext_resource type="Texture2D" uid="uid://ca41qy8diyh85" path="res://entities/enemies/enemy1(red)/assets/animations/death/death_8.png" id="9_n2cpi"]
 [ext_resource type="Texture2D" uid="uid://d2x87ml4vulpj" path="res://entities/enemies/enemy1(red)/assets/animations/death/death_9.png" id="10_sripf"]
+[ext_resource type="Texture2D" uid="uid://bxckht4ybjj31" path="res://entities/enemies/enemy1(red)/assets/animations/idle/idle_0.png" id="13_w8e26"]
+[ext_resource type="Texture2D" uid="uid://bsf7fvq5w1675" path="res://entities/enemies/enemy1(red)/assets/animations/idle/idle_1.png" id="14_b8wqt"]
+[ext_resource type="Texture2D" uid="uid://cstoxj6snccu8" path="res://entities/enemies/enemy1(red)/assets/animations/idle/idle_2.png" id="15_55hmp"]
+[ext_resource type="Texture2D" uid="uid://dt34qnyen7b06" path="res://entities/enemies/enemy1(red)/assets/animations/idle/idle_3.png" id="16_opiuo"]
+[ext_resource type="Texture2D" uid="uid://5hdygw6u174s" path="res://entities/enemies/enemy1(red)/assets/animations/idle/idle_4.png" id="17_ydr4m"]
+[ext_resource type="Texture2D" uid="uid://bmmov627eirvk" path="res://entities/enemies/enemy1(red)/assets/animations/idle/idle_5.png" id="18_qycya"]
 
 [sub_resource type="Resource" id="Resource_3oy53"]
 script = ExtResource("2_4kv7m")
@@ -58,8 +64,31 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("10_sripf")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_w8e26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_b8wqt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_55hmp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_opiuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ydr4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_qycya")
+}],
+"loop": true,
+"name": &"idle",
 "speed": 10.0
 }, {
 "frames": [{
@@ -104,9 +133,8 @@ compatible = SubResource("Resource_3oy53")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.02, 0.02)
 sprite_frames = SubResource("SpriteFrames_08d3s")
-animation = &"walk"
+animation = &"death"
 autoplay = "walk"
-frame_progress = 0.146547
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8)

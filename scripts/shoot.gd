@@ -45,9 +45,10 @@ func _on_body_entered(body):
 			
 			# se forem compatíevis
 			if _theTwoEnemiesIsCompatible:
-				# eleimina os inimigos atingidos da partida
+				# para cada um dos dois inimigos da lista
 				for enemy in _listEnemies:
-					enemy.queue_free();
+					# a propriedade isDeath fica valendo true
+					enemy.isDeath = true;
 				# limpa a lista de inimigos atingidos
 				_listEnemies.clear();
 				return
@@ -57,6 +58,7 @@ func _on_body_entered(body):
 				## adiciona novamente a camada de layer
 				enemy.collision_layer = 2;
 				enemy.canMove = true;
+				enemy.isDeath = false;
 			# limpa a lista de inimigos atingidos
 			_listEnemies.clear();
 			

@@ -5,3 +5,4 @@ var playerNode = null;
 
 ## lista de inimigos atingidos
 var enemiesHit := [];
+

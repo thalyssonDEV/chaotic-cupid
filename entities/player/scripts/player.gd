@@ -64,6 +64,6 @@ func enableAnimations() -> void:
 
 ## função responsável por efetuar a movimentação do player
 func move(delta) -> void:
-	# pega os valores (-1 ou +1) para o vetor em ambos os eixos, baseado nos inputs
+	#	 pega os valores (-1 ou +1) para o vetor em ambos os eixos, baseado nos inputs
 	velocity = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down").normalized() * speed;
 	
