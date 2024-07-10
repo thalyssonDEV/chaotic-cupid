@@ -1,8 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://dk880qg0jnk8k"]
+[gd_scene load_steps=24 format=3 uid="uid://dk880qg0jnk8k"]
 
 [ext_resource type="Texture2D" uid="uid://b4k3r0fj6r6nr" path="res://entities/enemies/enemy1(red)/assets/animations/walk/walk_0.png" id="1_cb02b"]
 [ext_resource type="Script" path="res://entities/enemies/scripts/enemy.gd" id="1_tgfwr"]
 [ext_resource type="Texture2D" uid="uid://bfvdxyta1uj4p" path="res://entities/enemies/enemy1(red)/assets/animations/death/death_0.png" id="1_vpxik"]
+[ext_resource type="Script" path="res://entities/enemies/resources/enemyResource.gd" id="2_4kv7m"]
 [ext_resource type="Texture2D" uid="uid://blkph53do2icb" path="res://entities/enemies/enemy1(red)/assets/animations/death/death_1.png" id="2_im6q2"]
 [ext_resource type="Texture2D" uid="uid://x33w23fw2g4w" path="res://entities/enemies/enemy1(red)/assets/animations/walk/walk_1.png" id="2_k6jvy"]
 [ext_resource type="Texture2D" uid="uid://dxbdsvohkqhno" path="res://entities/enemies/enemy1(red)/assets/animations/walk/walk_2.png" id="3_2ohrd"]
@@ -19,6 +20,10 @@
 [ext_resource type="Texture2D" uid="uid://c2wi2c8f1t30v" path="res://entities/enemies/enemy1(red)/assets/animations/walk/walk_7.png" id="8_y7e6c"]
 [ext_resource type="Texture2D" uid="uid://ca41qy8diyh85" path="res://entities/enemies/enemy1(red)/assets/animations/death/death_8.png" id="9_n2cpi"]
 [ext_resource type="Texture2D" uid="uid://d2x87ml4vulpj" path="res://entities/enemies/enemy1(red)/assets/animations/death/death_9.png" id="10_sripf"]
+
+[sub_resource type="Resource" id="Resource_3oy53"]
+script = ExtResource("2_4kv7m")
+identity = "red"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_08d3s"]
 animations = [{
@@ -87,14 +92,14 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_18ite"]
-radius = 3.0
-height = 10.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2c2jn"]
+size = Vector2(6, 10)
 
-[node name="EnemyRed" type="CharacterBody2D"]
+[node name="EnemyRed" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 2
-collision_mask = 2
+collision_mask = 11
 script = ExtResource("1_tgfwr")
+compatible = SubResource("Resource_3oy53")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.02, 0.02)
@@ -104,5 +109,5 @@ autoplay = "walk"
 frame_progress = 0.146547
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 9)
-shape = SubResource("CapsuleShape2D_18ite")
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_2c2jn")

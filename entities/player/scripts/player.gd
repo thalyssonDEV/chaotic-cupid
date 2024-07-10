@@ -9,7 +9,7 @@ class_name Player;
 @onready var animation := get_node("AnimatedSprite2D") as AnimatedSprite2D;
 
 ## referência a cena da bala
-const SHOOT_SCENE = preload("res://scenes/bala.tscn");
+const SHOOT_SCENE = preload("res://scenes/shoot.tscn");
 
 func _ready() -> void:
 	## informa a global que esta classe é o player
