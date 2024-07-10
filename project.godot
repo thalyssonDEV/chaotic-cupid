@@ -14,6 +14,10 @@ config/name="Chaotic cupid"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://scenes/global.tscn"
+
 [display]
 
 window/size/viewport_width=350
@@ -50,6 +54,17 @@ ui_down={
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":1,"axis_value":1.0,"script":null)
 ]
 }
+shoot={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(189, 6),"global_position":Vector2(192, 38),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="enemy"
+2d_physics/layer_3="map"
 
 [rendering]
 

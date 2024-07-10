@@ -8,24 +8,46 @@ class_name Player;
 ## referência ao nó de animações do player
 @onready var animation := get_node("AnimatedSprite2D") as AnimatedSprite2D;
 
-func _ready() -> void:
-	pass
-	
+## referência a cena da bala
+const SHOOT_SCENE = preload("res://scenes/bala.tscn");
 
+func _ready() -> void:
+	## informa a global que esta classe é o player
+	Global.playerNode = self;
+	
 func _process(delta) -> void:
 	## chamada da função de movimentação
 	move(delta);
 	move_and_slide();
 	
-	## chamada da função para realizar as animações do plauyer
+	## chamada da função para realizar as animações do player
 	enableAnimations();
 	
+	## chamada da função para atirar
+	shoot();
+	
+## função para atirar
+func shoot() -> void:
+	## variável que checa se foi solicitado um tirp
+	var _isShoot = Input.is_action_just_pressed("shoot");
+	
+	## se solicitou para atirar
+	if _isShoot:
+		## guarda referência de uma instância de Bala 
+		var _shoot = SHOOT_SCENE.instantiate();
+		## adiciona essa instância como filha de "Shoots"
+		get_parent().get_node("Shoots").add_child(_shoot);
+		## define a posição de nascimento da bala
+		_shoot.global_position = self.global_position;
+		## pega a direção da bala como a direção do mouse, quando clicada
+		_shoot.look_at(get_global_mouse_position())
+
 
 ## função para ativar as animações
 func enableAnimations() -> void:
-	## variáveis booleanas para cheacar se o player está parado
+	## variável booleana para checar se o player está parado
 	var _isIdle: bool = velocity == Vector2.ZERO;
-	## variáveis booleanas para cheacar se o player está correndo para a direita
+	## variável booleana para checar se o player está correndo para a direita
 	var _isWalkToRight: bool = velocity.x > 0;
 	
 	## se o player não estiver parado

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://5krt14o2jkwj"]
+
+[ext_resource type="PackedScene" uid="uid://kgkbpmskjjvh" path="res://entities/player/scenes/player.tscn" id="1_h8o3r"]
+[ext_resource type="PackedScene" uid="uid://dk880qg0jnk8k" path="res://entities/enemies/enemy1(red)/enemy_red.tscn" id="2_50l5b"]
+[ext_resource type="PackedScene" uid="uid://bc8tajkj20xr8" path="res://entities/enemies/enemy2(green)/enemy_green.tscn" id="3_eyeub"]
+[ext_resource type="PackedScene" uid="uid://dvq57ccxk345w" path="res://entities/enemies/enemy3(purple)/enemy_purple.tscn" id="4_bs3h8"]
+
+[node name="Teste" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_h8o3r")]
+position = Vector2(156, 104)
+
+[node name="EnemyRed" parent="." instance=ExtResource("2_50l5b")]
+position = Vector2(311, 29)
+
+[node name="EnemyGreen" parent="." instance=ExtResource("3_eyeub")]
+position = Vector2(28, 12)
+
+[node name="EnemyPurple" parent="." instance=ExtResource("4_bs3h8")]
+position = Vector2(307, 170)
+
+[node name="Shoots" type="Node2D" parent="."]
