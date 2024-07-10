@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://58a41gfud4av"
-path="res://.godot/imported/fall_2.png-d6b3df0930d01b01eb9c89da2ff76269.ctex"
+uid="uid://barym8yywvr1y"
+path="res://.godot/imported/ground_white.png-ee976ce62516aed0b4132a956ec866ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/player/assets/anaimations/idle/fall_2.png"
-dest_files=["res://.godot/imported/fall_2.png-d6b3df0930d01b01eb9c89da2ff76269.ctex"]
+source_file="res://map/assets/ground_white.png"
+dest_files=["res://.godot/imported/ground_white.png-ee976ce62516aed0b4132a956ec866ec.ctex"]
 
 [params]
 
