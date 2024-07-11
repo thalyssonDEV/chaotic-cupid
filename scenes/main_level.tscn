@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dipp58lnu3cs8"]
+
+[ext_resource type="Script" path="res://scripts/MainLevel.gd" id="1_5jsse"]
+[ext_resource type="PackedScene" uid="uid://kgkbpmskjjvh" path="res://entities/player/scenes/player.tscn" id="2_xf1i5"]
+
+[node name="MainLevel" type="Node2D"]
+script = ExtResource("1_5jsse")
+metadata/_edit_horizontal_guides_ = [200.0]
+
+[node name="Player" parent="." instance=ExtResource("2_xf1i5")]

@@ -6,3 +6,5 @@ var playerNode = null;
 ## lista de inimigos atingidos
 var enemiesHit := [];
 
+## referência ao level principal
+var mainLevel = null
