@@ -214,3 +214,10 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
 shape = SubResource("CapsuleShape2D_j74bw")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = -288
+limit_top = -160
+limit_right = 304
+limit_bottom = 208
+position_smoothing_enabled = true
