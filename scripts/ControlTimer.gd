@@ -1,9 +1,12 @@
 extends Control
 
+signal tenSecondsPassed
+
 func _ready():
+	Global.controlTimer = self;
 	pass
 
-var seconds = 0
+var seconds = 6
 var minutes = 0
 
 ## Verifica se o formato é válido, redefinindo os segundos quando forem iguais a 60, e adicionando 1 aos minutos
@@ -21,7 +24,10 @@ func _process(delta):
 		$Label.text = "0" + str(minutes) + ":" + str(seconds);
 	else:
 		$Label.text = str(minutes) + ":0" + str(seconds);
-
+	
+	
 ## Incrementa os segundos constantemente
 func _on_timer_timeout():
 	seconds += 1
+	if seconds % 10 == 0:
+		emit_signal("tenSecondsPassed")
