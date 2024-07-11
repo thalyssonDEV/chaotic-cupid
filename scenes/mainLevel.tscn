@@ -1,22 +1,20 @@
-[gd_scene load_steps=25 format=3 uid="uid://5krt14o2jkwj"]
+[gd_scene load_steps=23 format=3 uid="uid://5krt14o2jkwj"]
 
-[ext_resource type="PackedScene" uid="uid://kgkbpmskjjvh" path="res://entities/player/scenes/player.tscn" id="1_h8o3r"]
-[ext_resource type="PackedScene" uid="uid://dk880qg0jnk8k" path="res://entities/enemies/enemy1(red)/enemy_red.tscn" id="2_50l5b"]
-[ext_resource type="PackedScene" uid="uid://bc8tajkj20xr8" path="res://entities/enemies/enemy2(green)/enemy_green.tscn" id="3_eyeub"]
-[ext_resource type="PackedScene" uid="uid://dvq57ccxk345w" path="res://entities/enemies/enemy3(purple)/enemy_purple.tscn" id="4_bs3h8"]
-[ext_resource type="PackedScene" uid="uid://b5mjyuin7ow3j" path="res://scenes/control_timer.tscn" id="5_t6i08"]
-[ext_resource type="Texture2D" uid="uid://cqwcbiom1d1k8" path="res://map/TILES MAP/Texture/TX Plant.png" id="6_t0863"]
-[ext_resource type="Texture2D" uid="uid://b8m7mr114jl3y" path="res://map/TILES MAP/Texture/TX Player.png" id="7_ufq3w"]
-[ext_resource type="Texture2D" uid="uid://bxbi0bnj81bst" path="res://map/TILES MAP/Texture/TX Props.png" id="8_ruoqg"]
-[ext_resource type="Texture2D" uid="uid://dr6vo8wqr7o0t" path="res://map/TILES MAP/Texture/TX Shadow Plant.png" id="9_hvr36"]
-[ext_resource type="Texture2D" uid="uid://bhfv05uiwlmph" path="res://map/TILES MAP/Texture/TX Shadow.png" id="10_tjxan"]
-[ext_resource type="Texture2D" uid="uid://hqv1x5iff7br" path="res://map/TILES MAP/Texture/TX Struct.png" id="11_5p6ca"]
-[ext_resource type="Texture2D" uid="uid://fu04863e2wbm" path="res://map/TILES MAP/Texture/TX Tileset Grass.png" id="12_bil8w"]
-[ext_resource type="Texture2D" uid="uid://b7a82rfdo0h3y" path="res://map/TILES MAP/Texture/TX Tileset Stone Ground.png" id="13_axhi1"]
-[ext_resource type="Texture2D" uid="uid://dd56fpxih2mq4" path="res://map/TILES MAP/Texture/TX Tileset Wall.png" id="14_doafw"]
+[ext_resource type="Script" path="res://scripts/MainLevel.gd" id="1_3k2nr"]
+[ext_resource type="Texture2D" uid="uid://cqwcbiom1d1k8" path="res://map/TILES MAP/Texture/TX Plant.png" id="1_bmv4k"]
+[ext_resource type="Texture2D" uid="uid://b8m7mr114jl3y" path="res://map/TILES MAP/Texture/TX Player.png" id="2_jns0b"]
+[ext_resource type="Texture2D" uid="uid://bxbi0bnj81bst" path="res://map/TILES MAP/Texture/TX Props.png" id="3_47stp"]
+[ext_resource type="Texture2D" uid="uid://dr6vo8wqr7o0t" path="res://map/TILES MAP/Texture/TX Shadow Plant.png" id="4_a5vvg"]
+[ext_resource type="Texture2D" uid="uid://bhfv05uiwlmph" path="res://map/TILES MAP/Texture/TX Shadow.png" id="5_wed5j"]
+[ext_resource type="Texture2D" uid="uid://hqv1x5iff7br" path="res://map/TILES MAP/Texture/TX Struct.png" id="6_4jkik"]
+[ext_resource type="Texture2D" uid="uid://fu04863e2wbm" path="res://map/TILES MAP/Texture/TX Tileset Grass.png" id="7_vnqxj"]
+[ext_resource type="Texture2D" uid="uid://b7a82rfdo0h3y" path="res://map/TILES MAP/Texture/TX Tileset Stone Ground.png" id="8_u6gwg"]
+[ext_resource type="Texture2D" uid="uid://dd56fpxih2mq4" path="res://map/TILES MAP/Texture/TX Tileset Wall.png" id="9_68jd7"]
+[ext_resource type="PackedScene" uid="uid://kgkbpmskjjvh" path="res://entities/player/scenes/player.tscn" id="10_mq855"]
+[ext_resource type="PackedScene" uid="uid://b5mjyuin7ow3j" path="res://scenes/control_timer.tscn" id="11_2qndo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d8duc"]
-texture = ExtResource("6_t0863")
+texture = ExtResource("1_bmv4k")
 4:0/0 = 0
 4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:0/0/physics_layer_0/angular_velocity = 0.0
@@ -745,7 +743,7 @@ texture = ExtResource("6_t0863")
 7:31/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dlu8x"]
-texture = ExtResource("7_ufq3w")
+texture = ExtResource("2_jns0b")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -832,7 +830,7 @@ texture = ExtResource("7_ufq3w")
 7:3/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_31klq"]
-texture = ExtResource("8_ruoqg")
+texture = ExtResource("3_47stp")
 14:0/0 = 0
 14:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:0/0/physics_layer_0/angular_velocity = 0.0
@@ -1901,7 +1899,7 @@ texture = ExtResource("8_ruoqg")
 28:6/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j5n6r"]
-texture = ExtResource("9_hvr36")
+texture = ExtResource("4_a5vvg")
 4:6/0 = 0
 4:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:6/0/physics_layer_0/angular_velocity = 0.0
@@ -2198,7 +2196,7 @@ texture = ExtResource("9_hvr36")
 23:14/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ddn57"]
-texture = ExtResource("10_tjxan")
+texture = ExtResource("5_wed5j")
 24:0/0 = 0
 24:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 24:0/0/physics_layer_0/angular_velocity = 0.0
@@ -3158,7 +3156,7 @@ texture = ExtResource("10_tjxan")
 11:31/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v6sww"]
-texture = ExtResource("11_5p6ca")
+texture = ExtResource("6_4jkik")
 25:1/0 = 0
 25:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 25:1/0/physics_layer_0/angular_velocity = 0.0
@@ -3767,7 +3765,7 @@ texture = ExtResource("11_5p6ca")
 18:15/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vak4s"]
-texture = ExtResource("12_bil8w")
+texture = ExtResource("7_vnqxj")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -4538,7 +4536,7 @@ texture = ExtResource("12_bil8w")
 15:15/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cvg44"]
-texture = ExtResource("13_axhi1")
+texture = ExtResource("8_u6gwg")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -5142,7 +5140,7 @@ texture = ExtResource("13_axhi1")
 15:15/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6egcq"]
-texture = ExtResource("14_doafw")
+texture = ExtResource("9_68jd7")
 2:2/0 = 0
 2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:2/0/physics_layer_0/angular_velocity = 0.0
@@ -5733,8 +5731,10 @@ sources/6 = SubResource("TileSetAtlasSource_vak4s")
 sources/7 = SubResource("TileSetAtlasSource_cvg44")
 sources/8 = SubResource("TileSetAtlasSource_6egcq")
 
-[node name="Teste" type="Node2D"]
-metadata/_edit_vertical_guides_ = [-288.0, 303.0]
+[node name="MainLevel" type="Node2D"]
+script = ExtResource("1_3k2nr")
+metadata/_edit_vertical_guides_ = [-288.0, 303.0, -247.0, 269.0]
+metadata/_edit_horizontal_guides_ = [-137.0, 191.0]
 
 [node name="Tiles" type="TileMap" parent="."]
 texture_filter = 1
@@ -5747,27 +5747,11 @@ layer_1/tile_data = PackedInt32Array(-65539, 1441794, 17, -3, 1441794, 18, 65533
 layer_2/name = "Decoraço Colidível"
 layer_2/tile_data = PackedInt32Array()
 
-[node name="Player" parent="." instance=ExtResource("1_h8o3r")]
+[node name="Player" parent="." instance=ExtResource("10_mq855")]
 position = Vector2(0, 0)
 
-[node name="ControlTimer" parent="Player" instance=ExtResource("5_t6i08")]
-
-[node name="EnemyRed" parent="." instance=ExtResource("2_50l5b")]
-position = Vector2(311, 29)
-
-[node name="EnemyRed2" parent="." instance=ExtResource("2_50l5b")]
-position = Vector2(74, 161)
-
-[node name="EnemyGreen" parent="." instance=ExtResource("3_eyeub")]
-position = Vector2(28, 12)
-
-[node name="EnemyGreen2" parent="." instance=ExtResource("3_eyeub")]
-position = Vector2(180, 30)
-
-[node name="EnemyPurple" parent="." instance=ExtResource("4_bs3h8")]
-position = Vector2(307, 170)
-
-[node name="EnemyPurple2" parent="." instance=ExtResource("4_bs3h8")]
-position = Vector2(292, 109)
+[node name="ControlTimer" parent="Player" instance=ExtResource("11_2qndo")]
 
 [node name="Shoots" type="Node2D" parent="."]
+
+[node name="Enemies" type="Node2D" parent="."]

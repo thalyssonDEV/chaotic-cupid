@@ -11,12 +11,13 @@ var cont: = 0;
 
 func _ready() -> void:
 	Global.mainLevel = self;
+	# conecetando sinal tebSeondsPasses com a função de instanciar inimigos
 	Global.controlTimer.tenSecondsPassed.connect(spawnEnemies)
 
 #func _process(delta) -> void:
 	#conditionToSpawner();
 
-## função que checa as condições de spaw de inimigos
+## função que instancia uma serie de inimigos baseado em uma disiculdade
 func spawnEnemies() -> void:
 	var _amount = Global.difficulties.get("spawn_enemies_amount")
 	for enemy in range(_amount):
@@ -32,9 +33,9 @@ func spawnerEnemy() -> void:
 	# guarda referência da instância de um inimigo
 	var _instanceEnemy = enemies.get(_keys[_index]).instantiate();
 	# define a posição de nascimento como uma versão aleatória no limite da dimensão da tela
-	_instanceEnemy.position = Vector2(randf_range(0, 350), randf_range(0, 200));
+	_instanceEnemy.position = Vector2(randf_range(-247, 270), randf_range(-135, 190));
 	# adiciona a instância como filha da cena
 	get_node("Enemies").add_child(_instanceEnemy);
-	#cont += 1;
+	
 	
 	

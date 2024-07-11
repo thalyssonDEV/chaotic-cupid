@@ -6,7 +6,7 @@ func _ready():
 	Global.controlTimer = self;
 	pass
 
-var seconds = 6
+var seconds = 0
 var minutes = 0
 
 ## Verifica se o formato é válido, redefinindo os segundos quando forem iguais a 60, e adicionando 1 aos minutos
@@ -29,5 +29,6 @@ func _process(delta):
 ## Incrementa os segundos constantemente
 func _on_timer_timeout():
 	seconds += 1
+	# caso tenha passado 10 segundos, emita o sinal
 	if seconds % 10 == 0:
 		emit_signal("tenSecondsPassed")
