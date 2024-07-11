@@ -1,6 +1,9 @@
 extends CanvasLayer
 
-signal tenSecondsPassed
+## sinal de quando se passa dez segundos
+signal tenSecondsPassed;
+## sinal de quando se passa um minuto
+signal oneSecondPassed;
 
 func _ready():
 	Global.controlTimer = self;
@@ -12,6 +15,7 @@ var minutes = 0
 ## Verifica se o formato é válido, redefinindo os segundos quando forem iguais a 60, e adicionando 1 aos minutos
 func _process(delta):
 	if seconds > 59:
+		#emit_signal("oneSecondPassed");
 		minutes += 1
 		seconds = 0
 		
@@ -32,3 +36,7 @@ func _on_timer_timeout():
 	# caso tenha passado 10 segundos, emita o sinal
 	if seconds % 10 == 0:
 		emit_signal("tenSecondsPassed")
+		
+	if seconds == 59:
+		emit_signal("oneSecondPassed");
+	

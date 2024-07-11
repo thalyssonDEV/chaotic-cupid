@@ -7,19 +7,31 @@ var enemies :Dictionary = {
 	"enemyPurble": preload("res://entities/enemies/enemy3(purple)/enemy_purple.tscn")
 }
 
-var cont: = 0;
+# minuto atual do jogp
+var currentMinute: = 0;
 
 func _ready() -> void:
 	Global.mainLevel = self;
 	# conecetando sinal tebSeondsPasses com a função de instanciar inimigos
-	Global.controlTimer.tenSecondsPassed.connect(spawnEnemies)
+	Global.controlTimer.tenSecondsPassed.connect(spawnEnemies);
+	Global.controlTimer.oneSecondPassed.connect(changePropieties);
 
 #func _process(delta) -> void:
 	#conditionToSpawner();
 
-## função que instancia uma serie de inimigos baseado em uma disiculdade
+func changePropieties() -> void:
+	# referência ao dicionário de dificuldades da global
+	var _dict : Dictionary = Global.difficults;
+	currentMinute += 1
+	# vetor de chaves do dicionário de propriedades de dificuldades
+	var _vectorKeys = Global.difficults.keys();
+	Global.quantiiesyEnemies = _dict.get(_vectorKeys[currentMinute]).get("quantiiesyEnemies");
+	Global.speedEnemy = _dict.get(_vectorKeys[currentMinute]).get("velocityEnemy");
+	print("alterada velocidade e spawners")
+
+## função que instancia uma serie de inimigos baseado 
 func spawnEnemies() -> void:
-	var _amount = Global.difficulties.get("spawn_enemies_amount")
+	var _amount = Global.quantiiesyEnemies;
 	for enemy in range(_amount):
 		spawnerEnemy();
 

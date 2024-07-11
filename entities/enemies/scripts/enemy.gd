@@ -3,7 +3,7 @@ extends CharacterBody2D
 class_name Enemy
 
 @export_category("Settings enemy")
-@export var speed : float = 25.0;
+@export var speed : float = 0.0;
 @export var compatible : EnemyResource;
 
 ## variável que recebe a informação se o inimigo morreu ou não
@@ -20,8 +20,10 @@ var canMove : bool = true;
 func _ready() -> void:
 	# pega a referência do player que está na global
 	player = Global.playerNode;
+	speed = Global.speedEnemy;
 	
 func _process(delta) -> void:
+	print("velocidade: " + str(int(speed)))
 	# chamada da função para o inimigo seguir o player
 	followPlayer();
 	# se o objeto poder se mover
