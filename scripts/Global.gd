@@ -24,6 +24,9 @@ var limitOfErros : int = 10;
 # variável que recebe a informação do score
 var score : int = 0;
 
+# variável que recebe a informação de vida do player
+var health : int = 100;
+
 # variável que define a velocidade do inimigo
 var speedEnemy : float = 25.0;
 

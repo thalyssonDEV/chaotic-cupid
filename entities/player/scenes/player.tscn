@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://kgkbpmskjjvh"]
+[gd_scene load_steps=42 format=3 uid="uid://kgkbpmskjjvh"]
 
 [ext_resource type="Texture2D" uid="uid://cb34y0aknf3m1" path="res://entities/player/assets/anaimations/death/death_0.png" id="1_knwtq"]
 [ext_resource type="Script" path="res://entities/player/scripts/player.gd" id="1_vspos"]
@@ -196,6 +196,10 @@ animations = [{
 radius = 3.0
 height = 10.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5l4rv"]
+radius = 4.0
+height = 14.0
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 2
 position = Vector2(105, 67)
@@ -221,3 +225,13 @@ limit_top = -160
 limit_right = 304
 limit_bottom = 208
 position_smoothing_enabled = true
+
+[node name="KillZone" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_5l4rv")
+debug_color = Color(0.922333, 0.238604, 0.370672, 0.42)
+
+[connection signal="body_entered" from="KillZone" to="." method="_on_kill_zone_body_entered"]

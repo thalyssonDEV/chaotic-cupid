@@ -11,11 +11,27 @@ var enemies :Dictionary = {
 @onready var labelLimitErros = get_node("CanvasLayer/LabelErros") as Label;
 # referência ao label de score
 @onready var labelScore = get_node("CanvasLayer/LabelScore") as Label;
+# referência ao label de vida
+@onready var labelLife = get_node("CanvasLayer/LabelLife") as Label;
 
 # minuto atual do jogp
 var currentMinute: = 0;
 
 func _ready() -> void:
+	# pega referência ao grupo dos inimigos
+	var _groupeEnemies = get_node("Enemies");
+	# se esse no de inimigos possuir filhos
+	if _groupeEnemies.get_children().size() > 0:
+		# remove cada um deles da cena
+		for child in _groupeEnemies.get_children():
+			_groupeEnemies.remove_child(child);
+			child.queue_free();
+	# reseta o limite de erros
+	Global.limitOfErros = 10;
+	# reseta a vida
+	Global.health = 100;
+	# reseta o score
+	Global.score = 0;
 	Global.mainLevel = self;
 	# conecetando sinal tebSeondsPassed com a função de instanciar inimigos
 	Global.controlTimer.tenSecondsPassed.connect(spawnEnemies);
@@ -23,14 +39,20 @@ func _ready() -> void:
 	Global.controlTimer.oneSecondPassed.connect(changePropieties);
 	
 func _process(delta) -> void:
+	# verificando se uma das condições de morte ocorreram
+	if Global.controlTimer.minutes == 6 or Global.health <= 0 or Global.limitOfErros <= 0:
+		# muda para a cena de tela final
+		get_tree().change_scene_to_file("res://scenes/finish_screen.tscn");
 	# se a quantidade limite de erros for menor que 3
 	if Global.limitOfErros <= 3:
 		# muda a cor da font para vermelha, para alertar o player
 		labelLimitErros.add_theme_color_override("font_color", Color(1, 0, 0));
 	# colocando no label informação da quantidade de liite de erros
 	labelLimitErros.text = "limit erros: " + str(Global.limitOfErros);
-	# exibindo no label a informação referenet ao score do player
+	# colocando no label a informação referent ao score do player
 	labelScore.text =  "score: " + str(Global.score);
+	# colocando no label a informação da vida do player
+	labelLife.text = "life: " + str(Global.health);
 
 ## função que altera as propieades de dificuldades do jogo
 func changePropieties() -> void:

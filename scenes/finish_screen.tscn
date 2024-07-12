@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://cghcc0imsmh8x"]
+
+[ext_resource type="Texture2D" uid="uid://csftnik8megx4" path="res://assets/backgrounds/backgroundScrennFinish.jpeg" id="1_04t1d"]
+[ext_resource type="Script" path="res://scripts/finish_screen.gd" id="1_1173i"]
+[ext_resource type="FontFile" uid="uid://cavwxlhc82ymp" path="res://assets/Fonts/fonts/cmu-typewriter/Typewriter/cmuntt.ttf" id="3_yhp4c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_i7n6d"]
+font = ExtResource("3_yhp4c")
+font_size = 20
+font_color = Color(0.403922, 1, 0.968627, 1)
+
+[node name="FinishScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 350.0
+offset_bottom = 200.0
+script = ExtResource("1_1173i")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 200.0
+color = Color(1, 1, 1, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.4)
+position = Vector2(174, 112)
+scale = Vector2(0.348145, 0.22998)
+texture = ExtResource("1_04t1d")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Score total:"
+label_settings = SubResource("LabelSettings_i7n6d")
+horizontal_alignment = 1
+
+[node name="Controls" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="mainMenu" type="Button" parent="Controls"]
+layout_mode = 2
+text = "Main menu"
+
+[node name="quit" type="Button" parent="Controls"]
+layout_mode = 2
+text = "Quit
+"
+
+[connection signal="pressed" from="Controls/mainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Controls/quit" to="." method="_on_quit_pressed"]

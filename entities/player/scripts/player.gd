@@ -67,3 +67,13 @@ func move(delta) -> void:
 	#	 pega os valores (-1 ou +1) para o vetor em ambos os eixos, baseado nos inputs
 	velocity = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down").normalized() * speed;
 	
+
+## função para remover vida do player
+func _on_kill_zone_body_entered(body):
+	# verificando se o corpo que entrou é de um inimigo
+	if is_instance_of(body, Enemy):
+		# decrementa a vida do player em -10
+		Global.health -= 10;
+	
+	
+	

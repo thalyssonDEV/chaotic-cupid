@@ -5769,7 +5769,13 @@ offset_bottom = 23.0
 theme = ExtResource("14_4x8ku")
 
 [node name="LabelScore" type="Label" parent="CanvasLayer"]
-offset_left = 150.0
-offset_right = 218.0
+offset_left = 170.0
+offset_right = 238.0
+offset_bottom = 23.0
+theme = ExtResource("14_4x8ku")
+
+[node name="LabelLife" type="Label" parent="CanvasLayer"]
+offset_left = 70.0
+offset_right = 138.0
 offset_bottom = 23.0
 theme = ExtResource("14_4x8ku")
