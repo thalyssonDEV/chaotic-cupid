@@ -12,20 +12,22 @@ var currentMinute: = 0;
 
 func _ready() -> void:
 	Global.mainLevel = self;
-	# conecetando sinal tebSeondsPasses com a função de instanciar inimigos
+	# conecetando sinal tebSeondsPassed com a função de instanciar inimigos
 	Global.controlTimer.tenSecondsPassed.connect(spawnEnemies);
+	# conectando o sinal oneSecondPasses com a função de mudar as propiedades
 	Global.controlTimer.oneSecondPassed.connect(changePropieties);
 
-#func _process(delta) -> void:
-	#conditionToSpawner();
-
+## função que altera as propieades de dificuldades do jogo
 func changePropieties() -> void:
 	# referência ao dicionário de dificuldades da global
 	var _dict : Dictionary = Global.difficults;
+	# incrementa o minuto
 	currentMinute += 1
 	# vetor de chaves do dicionário de propriedades de dificuldades
 	var _vectorKeys = Global.difficults.keys();
+	# quantidade de inimigos vai ser um informação que tem no dicionário de dificuldade de acordo com o minuto atual
 	Global.quantiiesyEnemies = _dict.get(_vectorKeys[currentMinute]).get("quantiiesyEnemies");
+	# a velocidade dos inimigos vai ser um informação que tem no dicionário de dificuldade de acordo com o minuto atual
 	Global.speedEnemy = _dict.get(_vectorKeys[currentMinute]).get("velocityEnemy");
 	print("alterada velocidade e spawners")
 
