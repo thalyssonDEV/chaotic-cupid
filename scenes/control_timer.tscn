@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b5mjyuin7ow3j"]
 
 [ext_resource type="Script" path="res://scripts/ControlTimer.gd" id="1_o5ah1"]
-[ext_resource type="FontFile" uid="uid://oge2x1eyump1" path="res://assets/Fonts/fonts/connection/Connection.otf" id="2_5h1sv"]
+[ext_resource type="Theme" uid="uid://blrklyi6uy61g" path="res://assets/themes/game_theme.tres" id="2_4gwvh"]
 
 [node name="ControlTimer" type="CanvasLayer"]
 script = ExtResource("1_o5ah1")
@@ -11,13 +11,8 @@ autostart = true
 
 [node name="Label" type="Label" parent="."]
 texture_filter = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.405003, 1, 0.964627, 1)
-theme_override_fonts/font = ExtResource("2_5h1sv")
-horizontal_alignment = 1
+offset_right = 76.0
+offset_bottom = 17.0
+theme = ExtResource("2_4gwvh")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

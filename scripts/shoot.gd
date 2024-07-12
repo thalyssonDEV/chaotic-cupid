@@ -6,7 +6,7 @@ class_name Bala
 @export var speedShoot: float = 200.0;
 
 func _ready() -> void:
-	pass
+	Global.shootNode = self;
 
 func _process(delta) -> void:
 	# chamada da função para mover a bala
@@ -38,13 +38,19 @@ func _on_body_entered(body):
 		# guarda na lista de inimigos atingidos o inimigo atual
 		_listEnemies.append(body);
 		
-		## se ja tiverem dois inimigos atingidos
+		# se ja tiverem dois inimigos atingidos
 		if len(_listEnemies) == 2:
 			# checagem se os inimigos da lista são compatíveis
 			var _theTwoEnemiesIsCompatible: bool = _listEnemies[0].compatible.identity == _listEnemies[1].compatible.identity;
 			
 			# se forem compatíevis
 			if _theTwoEnemiesIsCompatible:
+				# incrementa o score
+				Global.score += 3;
+				# define a cor do label da mensagem como verde
+				Global.message.label.add_theme_color_override("font_color", Color(0,1,0))
+				# chama a função de emitir mensagem passando o array de mensagens de erro
+				Global.message.emitMessage(Global.message.messages.get("correctUnion"));
 				# para cada um dos dois inimigos da lista
 				for enemy in _listEnemies:
 					# a propriedade isDeath fica valendo true
@@ -53,6 +59,13 @@ func _on_body_entered(body):
 				_listEnemies.clear();
 				return
 			
+			# caso não tenha sido a união correta
+			# define a cor do label da mensagem como vermelha
+			Global.message.label.add_theme_color_override("font_color", Color(1,0,0));
+			# chama a função de emitir mensagem passando o array de mensagens de acerto
+			Global.message.emitMessage(Global.message.messages.get("wrongUnion"));
+			# decrementa a quantidade limite de erros
+			Global.limitOfErros -= 1;
 			# volta a movimentação dos inimigos atingidos novamente
 			for enemy in _listEnemies:
 				## adiciona novamente a camada de layer
