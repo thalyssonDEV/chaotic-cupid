@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://kgkbpmskjjvh"]
+[gd_scene load_steps=43 format=3 uid="uid://kgkbpmskjjvh"]
 
 [ext_resource type="Texture2D" uid="uid://cb34y0aknf3m1" path="res://entities/player/assets/anaimations/death/death_0.png" id="1_knwtq"]
 [ext_resource type="Script" path="res://entities/player/scripts/player.gd" id="1_vspos"]
@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://dlw4ej05vpi6v" path="res://entities/player/assets/anaimations/walk/walk_5.png" id="35_nujpl"]
 [ext_resource type="Texture2D" uid="uid://c8fcrgxw0fyhu" path="res://entities/player/assets/anaimations/walk/walk_6.png" id="36_c62hx"]
 [ext_resource type="Texture2D" uid="uid://cprju5s3a44qe" path="res://entities/player/assets/anaimations/walk/walk_7.png" id="37_cisjl"]
+[ext_resource type="Script" path="res://entities/player/scripts/Camera2D.gd" id="39_nmbtu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bvyh1"]
 animations = [{
@@ -226,6 +227,7 @@ limit_top = -160
 limit_right = 304
 limit_bottom = 208
 position_smoothing_enabled = true
+script = ExtResource("39_nmbtu")
 
 [node name="KillZone" type="Area2D" parent="."]
 collision_mask = 2
