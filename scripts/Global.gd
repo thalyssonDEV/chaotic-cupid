@@ -1,5 +1,8 @@
 extends Node2D
 
+# preloado da cena de fadeIn
+var fadeIn = preload("res://scenes/fade_in.tscn");
+
 # referência ao player
 var playerNode = null;
 
@@ -59,3 +62,19 @@ var difficults = {
 		"velocityEnemy" : 70.0
 	}
 }
+
+## Dicionário das principais cenas do jogo
+var scenes : Dictionary = {
+	"mainMenu" : preload("res://scenes/tile_screem.tscn"),
+	"mainLevel" : preload("res://scenes/mainLevel.tscn"),
+	"finishScreen": preload("res://scenes/finish_screen.tscn")
+}
+
+## função para mudar de uma cena para outra, porém com transação
+func changeScene(destinyScene:String) -> void:
+	# variável que guarda uma instância de fadein
+	var _fadeinInstance = fadeIn.instantiate();
+	# a cena destino é baseada no valor do diconário que tem por chave o dastinyScene
+	_fadeinInstance.destinyScene = scenes.get(destinyScene);
+	# instancia a cena
+	add_child(_fadeinInstance);
