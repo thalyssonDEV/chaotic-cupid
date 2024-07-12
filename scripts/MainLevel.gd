@@ -74,12 +74,12 @@ func spawnEnemies() -> void:
 	for enemy in range(_amount):
 		spawnerEnemy();
 
-## função para instanciare inimigos na tela do jogo
+## função para instanciar inimigos na tela do jogo
 func spawnerEnemy() -> void:
 	randomize();
 	# vetor de chaves do dicionário de inimigos
 	var _keys = enemies.keys();
-	# peag index aleatório em um range de 0 ao tamanho do vetor - 1 (ja que se inicia em 0)
+	# pega index aleatório em um range de 0 ao tamanho do vetor - 1 (ja que se inicia em 0)
 	var _index = randi_range(0, len(_keys) - 1);
 	# guarda referência da instância de um inimigo
 	var _instanceEnemy = enemies.get(_keys[_index]).instantiate();

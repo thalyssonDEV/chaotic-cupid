@@ -24,6 +24,7 @@ Global="*res://scenes/global.tscn"
 window/size/viewport_width=350
 window/size/viewport_height=200
 window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="res://assets/mira.png"
 
 [input]
 
