@@ -85,6 +85,10 @@ func spawnerEnemy() -> void:
 	var _instanceEnemy = enemies.get(_keys[_index]).instantiate();
 	# define a posição de nascimento como uma versão aleatória no limite da dimensão da tela
 	_instanceEnemy.position = Vector2(randf_range(-247, 270), randf_range(-135, 190));
+	# continue procurando uma posição se a posição sorteada for a do player
+	while (_instanceEnemy.position == Global.playerNode.position):
+		# pega uma outra posição
+		_instanceEnemy.position = Vector2(randf_range(-247, 270), randf_range(-135, 190))
 	# adiciona a instância como filha da cena
 	get_node("Enemies").add_child(_instanceEnemy);
 	
