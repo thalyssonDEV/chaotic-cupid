@@ -7,6 +7,11 @@ var enemies :Dictionary = {
 	"enemyPurble": preload("res://entities/enemies/enemy3(purple)/enemy_purple.tscn")
 }
 
+# referência a label de quantiade limite de limites de erros
+@onready var labelLimitErros = get_node("CanvasLayer/LabelErros") as Label;
+# referência ao label de score
+@onready var labelScore = get_node("CanvasLayer/LabelScore") as Label;
+
 # minuto atual do jogp
 var currentMinute: = 0;
 
@@ -16,6 +21,16 @@ func _ready() -> void:
 	Global.controlTimer.tenSecondsPassed.connect(spawnEnemies);
 	# conectando o sinal oneSecondPasses com a função de mudar as propiedades
 	Global.controlTimer.oneSecondPassed.connect(changePropieties);
+	
+func _process(delta) -> void:
+	# se a quantidade limite de erros for menor que 3
+	if Global.limitOfErros <= 3:
+		# muda a cor da font para vermelha, para alertar o player
+		labelLimitErros.add_theme_color_override("font_color", Color(1, 0, 0));
+	# colocando no label informação da quantidade de liite de erros
+	labelLimitErros.text = "limit erros: " + str(Global.limitOfErros);
+	# exibindo no label a informação referenet ao score do player
+	labelScore.text =  "score: " + str(Global.score);
 
 ## função que altera as propieades de dificuldades do jogo
 func changePropieties() -> void:

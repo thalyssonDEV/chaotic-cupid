@@ -1,25 +1,25 @@
 [gd_scene load_steps=3 format=3 uid="uid://basr0km0fv272"]
 
-[ext_resource type="FontFile" uid="uid://oge2x1eyump1" path="res://assets/Fonts/fonts/connection/Connection.otf" id="1_57om3"]
 [ext_resource type="Script" path="res://scripts/messages.gd" id="1_qd72e"]
+[ext_resource type="Theme" uid="uid://blrklyi6uy61g" path="res://assets/themes/game_theme.tres" id="2_1qdvo"]
 
 [node name="Messages" type="CanvasLayer"]
 script = ExtResource("1_qd72e")
 
 [node name="Label" type="Label" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -175.0
-offset_right = 175.0
-offset_bottom = 200.0
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -85.0
+offset_bottom = -69.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0.403922, 1, 0.964706, 1)
-theme_override_fonts/font = ExtResource("1_57om3")
-horizontal_alignment = 2
+grow_vertical = 2
+theme = ExtResource("2_1qdvo")
+horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 2.5
 one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

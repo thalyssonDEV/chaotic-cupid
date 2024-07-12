@@ -10,14 +10,16 @@ class_name Message
 # dicionário de mensagens de erros e acertos
 var messages : Dictionary = {
 	"correctUnion" : [
-		"Amor à primeira vista!",
-		"Você uniu um casal perfeito!",
-		"Cupido arrasou!"
+		"💘 Amor à primeira vista!",
+		"💘 Você uniu um casal perfeito!",
+		"💘 Cupido arrasou!",
+		"💘 Louca paixão!"
 	],
 	"wrongUnion" : [
-		"Ops, tente novamente!",
-		"Esse não é o par certo!",
-		"Cuidado, você errou!"
+		"❌ Ops, tente novamente!",
+		"❌ Esse não é o par certo!",
+		"❌ Cuidado, você errou!",
+		"❌ Possue um outro amor"
 	]
 }
 

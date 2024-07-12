@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://5krt14o2jkwj"]
+[gd_scene load_steps=25 format=3 uid="uid://5krt14o2jkwj"]
 
 [ext_resource type="Script" path="res://scripts/MainLevel.gd" id="1_3k2nr"]
 [ext_resource type="Texture2D" uid="uid://cqwcbiom1d1k8" path="res://map/TILES MAP/Texture/TX Plant.png" id="1_bmv4k"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://kgkbpmskjjvh" path="res://entities/player/scenes/player.tscn" id="10_mq855"]
 [ext_resource type="PackedScene" uid="uid://b5mjyuin7ow3j" path="res://scenes/control_timer.tscn" id="11_2qndo"]
 [ext_resource type="PackedScene" uid="uid://basr0km0fv272" path="res://scenes/messages.tscn" id="13_e3lrv"]
+[ext_resource type="Theme" uid="uid://blrklyi6uy61g" path="res://assets/themes/game_theme.tres" id="14_4x8ku"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d8duc"]
 texture = ExtResource("1_bmv4k")
@@ -5734,7 +5735,7 @@ sources/8 = SubResource("TileSetAtlasSource_6egcq")
 
 [node name="MainLevel" type="Node2D"]
 script = ExtResource("1_3k2nr")
-metadata/_edit_vertical_guides_ = [-288.0, 303.0, -247.0, 269.0]
+metadata/_edit_vertical_guides_ = [772.0, 729.0, 725.0, 718.0]
 metadata/_edit_horizontal_guides_ = [-137.0, 191.0]
 
 [node name="Tiles" type="TileMap" parent="."]
@@ -5758,3 +5759,17 @@ position = Vector2(0, 0)
 [node name="Shoots" type="Node2D" parent="."]
 
 [node name="Enemies" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LabelErros" type="Label" parent="CanvasLayer"]
+offset_left = 250.0
+offset_right = 318.0
+offset_bottom = 23.0
+theme = ExtResource("14_4x8ku")
+
+[node name="LabelScore" type="Label" parent="CanvasLayer"]
+offset_left = 150.0
+offset_right = 218.0
+offset_bottom = 23.0
+theme = ExtResource("14_4x8ku")

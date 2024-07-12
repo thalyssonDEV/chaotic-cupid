@@ -18,6 +18,12 @@ var shootNode = null;
 # referência a classe de mensagens
 var message = null;
 
+# variável que define a quantidade de erros que o player pode fazer
+var limitOfErros : int = 10;
+
+# variável que recebe a informação do score
+var score : int = 0;
+
 # variável que define a velocidade do inimigo
 var speedEnemy : float = 25.0;
 

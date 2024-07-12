@@ -5,9 +5,6 @@ class_name Bala
 @export_category("Propiety bala")
 @export var speedShoot: float = 200.0;
 
-# sinal de quando o player fazer uma união correta
-signal unionCorrect;
-
 func _ready() -> void:
 	Global.shootNode = self;
 
@@ -48,9 +45,11 @@ func _on_body_entered(body):
 			
 			# se forem compatíevis
 			if _theTwoEnemiesIsCompatible:
-				# emite o sinal
-				#emit_signal("unionCorrect");
+				# incrementa o score
+				Global.score += 3;
+				# define a cor do label da mensagem como verde
 				Global.message.label.add_theme_color_override("font_color", Color(0,1,0))
+				# chama a função de emitir mensagem passando o array de mensagens de erro
 				Global.message.emitMessage(Global.message.messages.get("correctUnion"));
 				# para cada um dos dois inimigos da lista
 				for enemy in _listEnemies:
@@ -61,8 +60,12 @@ func _on_body_entered(body):
 				return
 			
 			# caso não tenha sido a união correta
+			# define a cor do label da mensagem como vermelha
 			Global.message.label.add_theme_color_override("font_color", Color(1,0,0));
+			# chama a função de emitir mensagem passando o array de mensagens de acerto
 			Global.message.emitMessage(Global.message.messages.get("wrongUnion"));
+			# decrementa a quantidade limite de erros
+			Global.limitOfErros -= 1;
 			# volta a movimentação dos inimigos atingidos novamente
 			for enemy in _listEnemies:
 				## adiciona novamente a camada de layer
