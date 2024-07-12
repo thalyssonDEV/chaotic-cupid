@@ -11,11 +11,8 @@ autostart = true
 
 [node name="Label" type="Label" parent="."]
 texture_filter = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 76.0
+offset_bottom = 17.0
 theme_override_colors/font_color = Color(0.405003, 1, 0.964627, 1)
 theme_override_fonts/font = ExtResource("2_5h1sv")
 horizontal_alignment = 1

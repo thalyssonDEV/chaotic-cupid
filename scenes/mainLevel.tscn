@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://5krt14o2jkwj"]
+[gd_scene load_steps=24 format=3 uid="uid://5krt14o2jkwj"]
 
 [ext_resource type="Script" path="res://scripts/MainLevel.gd" id="1_3k2nr"]
 [ext_resource type="Texture2D" uid="uid://cqwcbiom1d1k8" path="res://map/TILES MAP/Texture/TX Plant.png" id="1_bmv4k"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dd56fpxih2mq4" path="res://map/TILES MAP/Texture/TX Tileset Wall.png" id="9_68jd7"]
 [ext_resource type="PackedScene" uid="uid://kgkbpmskjjvh" path="res://entities/player/scenes/player.tscn" id="10_mq855"]
 [ext_resource type="PackedScene" uid="uid://b5mjyuin7ow3j" path="res://scenes/control_timer.tscn" id="11_2qndo"]
+[ext_resource type="PackedScene" uid="uid://basr0km0fv272" path="res://scenes/messages.tscn" id="13_e3lrv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d8duc"]
 texture = ExtResource("1_bmv4k")
@@ -5749,6 +5750,8 @@ layer_2/tile_data = PackedInt32Array()
 
 [node name="Player" parent="." instance=ExtResource("10_mq855")]
 position = Vector2(0, 0)
+
+[node name="Messages" parent="Player" instance=ExtResource("13_e3lrv")]
 
 [node name="ControlTimer" parent="Player" instance=ExtResource("11_2qndo")]
 

@@ -1,21 +1,27 @@
 extends Node2D
 
-## referência ao player
+# referência ao player
 var playerNode = null;
 
-## lista de inimigos atingidos
+# lista de inimigos atingidos
 var enemiesHit := [];
 
-## referência ao level principal
-var mainLevel = null
+# referência ao level principal
+var mainLevel = null;
 
-## referência ao controlador de tempo
-var controlTimer = null
+# referência ao controlador de tempo
+var controlTimer = null;
 
-## variável que define a velocidade do inimigo
-var speedEnemy : float = 75.0;
+# referência a classe de bala
+var shootNode = null;
 
-## variável que define a velocidade do inimigo
+# referência a classe de mensagens
+var message = null;
+
+# variável que define a velocidade do inimigo
+var speedEnemy : float = 25.0;
+
+# variável que define a velocidade do inimigo
 var quantiiesyEnemies : int = 4;
 
 ## dicionário com as propieades de dificuldades baseado no minuto em que a partida se encontra
