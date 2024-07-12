@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://20qwttjod6j7"]
+[gd_scene load_steps=8 format=3 uid="uid://20qwttjod6j7"]
 
 [ext_resource type="Texture2D" uid="uid://b222hpqh41qk0" path="res://assets/backgrounds/backgroundTileScreem.jpeg" id="1_fij6e"]
 [ext_resource type="Script" path="res://scripts/tile_screem.gd" id="1_ncdkv"]
 [ext_resource type="Theme" uid="uid://blrklyi6uy61g" path="res://assets/themes/game_theme.tres" id="2_6njdn"]
 [ext_resource type="FontFile" uid="uid://oge2x1eyump1" path="res://assets/Fonts/fonts/connection/Connection.otf" id="2_sj6m3"]
 [ext_resource type="FontFile" uid="uid://cavwxlhc82ymp" path="res://assets/Fonts/fonts/cmu-typewriter/Typewriter/cmuntt.ttf" id="4_s2f2w"]
+[ext_resource type="PackedScene" uid="uid://vn2778h06s0u" path="res://scenes/fade_out.tscn" id="6_7js76"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_p1stm"]
 font = ExtResource("4_s2f2w")
@@ -71,6 +72,8 @@ text = "start"
 [node name="quitButton" type="Button" parent="Controls"]
 layout_mode = 2
 text = "Quit"
+
+[node name="FadeOut" parent="." instance=ExtResource("6_7js76")]
 
 [connection signal="pressed" from="Controls/startButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Controls/quitButton" to="." method="_on_quit_button_pressed"]

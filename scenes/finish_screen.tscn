@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cghcc0imsmh8x"]
+[gd_scene load_steps=6 format=3 uid="uid://cghcc0imsmh8x"]
 
 [ext_resource type="Texture2D" uid="uid://csftnik8megx4" path="res://assets/backgrounds/backgroundScrennFinish.jpeg" id="1_04t1d"]
 [ext_resource type="Script" path="res://scripts/finish_screen.gd" id="1_1173i"]
 [ext_resource type="FontFile" uid="uid://cavwxlhc82ymp" path="res://assets/Fonts/fonts/cmu-typewriter/Typewriter/cmuntt.ttf" id="3_yhp4c"]
+[ext_resource type="PackedScene" uid="uid://vn2778h06s0u" path="res://scenes/fade_out.tscn" id="4_rtwus"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i7n6d"]
 font = ExtResource("3_yhp4c")
@@ -67,6 +68,8 @@ text = "Main menu"
 layout_mode = 2
 text = "Quit
 "
+
+[node name="FadeOut" parent="." instance=ExtResource("4_rtwus")]
 
 [connection signal="pressed" from="Controls/mainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Controls/quit" to="." method="_on_quit_pressed"]
