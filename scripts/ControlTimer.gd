@@ -9,7 +9,7 @@ func _ready():
 	Global.controlTimer = self;
 	pass
 
-var seconds = 8
+var seconds = 0
 var minutes = 0
 
 ## Verifica se o formato é válido, redefinindo os segundos quando forem iguais a 60, e adicionando 1 aos minutos

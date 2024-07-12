@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://20qwttjod6j7"]
+
+[ext_resource type="Texture2D" uid="uid://b222hpqh41qk0" path="res://assets/backgrounds/backgroundTileScreem.jpeg" id="1_fij6e"]
+[ext_resource type="Script" path="res://scripts/tile_screem.gd" id="1_ncdkv"]
+[ext_resource type="Theme" uid="uid://blrklyi6uy61g" path="res://assets/themes/game_theme.tres" id="2_6njdn"]
+[ext_resource type="FontFile" uid="uid://oge2x1eyump1" path="res://assets/Fonts/fonts/connection/Connection.otf" id="2_sj6m3"]
+[ext_resource type="FontFile" uid="uid://cavwxlhc82ymp" path="res://assets/Fonts/fonts/cmu-typewriter/Typewriter/cmuntt.ttf" id="4_s2f2w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_p1stm"]
+font = ExtResource("4_s2f2w")
+font_size = 30
+font_color = Color(0.403922, 1, 0.968627, 1)
+
+[node name="TileScreem" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 350.0
+offset_bottom = 200.0
+script = ExtResource("1_ncdkv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.470588)
+position = Vector2(175.664, 112)
+scale = Vector2(0.341141, 0.227005)
+texture = ExtResource("1_fij6e")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -1.0
+offset_right = 347.0
+offset_bottom = 199.0
+color = Color(1, 1, 1, 0)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.5
+offset_top = -85.0
+offset_right = 103.5
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_6njdn")
+theme_override_fonts/font = ExtResource("2_sj6m3")
+text = "Chaotic Cupid"
+label_settings = SubResource("LabelSettings_p1stm")
+horizontal_alignment = 1
+
+[node name="Controls" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.5
+offset_right = 51.5
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="startButton" type="Button" parent="Controls"]
+layout_mode = 2
+text = "start"
+
+[node name="quitButton" type="Button" parent="Controls"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="Controls/startButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Controls/quitButton" to="." method="_on_quit_button_pressed"]

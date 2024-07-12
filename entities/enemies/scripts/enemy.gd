@@ -23,7 +23,6 @@ func _ready() -> void:
 	speed = Global.speedEnemy;
 	
 func _process(delta) -> void:
-	print("velocidade: " + str(int(speed)))
 	# chamada da função para o inimigo seguir o player
 	followPlayer();
 	# se o objeto poder se mover
