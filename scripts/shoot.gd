@@ -60,6 +60,8 @@ func _on_body_entered(body):
 				return
 			
 			# caso não tenha sido a união correta
+			# chama função de tremer a camera
+			Global.camera.initAgitation(0.9, 0.6);
 			# define a cor do label da mensagem como vermelha
 			Global.message.label.add_theme_color_override("font_color", Color(1,0,0));
 			# chama a função de emitir mensagem passando o array de mensagens de acerto

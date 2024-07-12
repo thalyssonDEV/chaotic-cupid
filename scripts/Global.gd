@@ -18,6 +18,9 @@ var shootNode = null;
 # referência a classe de mensagens
 var message = null;
 
+# referência a câmera do jogo
+var camera = null;
+
 # variável que define a quantidade de erros que o player pode fazer
 var limitOfErros : int = 10;
 
