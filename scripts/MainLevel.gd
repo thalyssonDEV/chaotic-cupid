@@ -18,7 +18,7 @@ var enemies :Dictionary = {
 var currentMinute: = 0;
 
 func _ready() -> void:
-	# pega referência ao grupo dos inimigos
+	# pega referência ao grupo dos inimigos	
 	var _groupeEnemies = get_node("Enemies");
 	# se esse no de inimigos possuir filhos
 	if _groupeEnemies.get_children().size() > 0:
@@ -30,6 +30,8 @@ func _ready() -> void:
 	Global.limitOfErros = 10;
 	# reseta a vida
 	Global.health = 100;
+	# restaura a vida total no healthBar
+	Global.healthBar.value = Global.health;
 	# reseta o score
 	Global.score = 0;
 	Global.mainLevel = self;
@@ -51,8 +53,6 @@ func _process(delta) -> void:
 	labelLimitErros.text = "limit erros: " + str(Global.limitOfErros);
 	# colocando no label a informação referent ao score do player
 	labelScore.text =  "score: " + str(Global.score);
-	# colocando no label a informação da vida do player
-	labelLife.text = "life: " + str(Global.health);
 
 ## função que altera as propieades de dificuldades do jogo
 func changePropieties() -> void:

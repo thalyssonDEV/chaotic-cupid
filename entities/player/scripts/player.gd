@@ -74,6 +74,7 @@ func _on_kill_zone_body_entered(body):
 	if is_instance_of(body, Enemy):
 		# decrementa a vida do player em -10
 		Global.health -= 10;
-	
-	
+		# atualiza o valor do healhBar
+		Global.healthBar.value = Global.health;
+		print("life: ", Global.health)
 	
