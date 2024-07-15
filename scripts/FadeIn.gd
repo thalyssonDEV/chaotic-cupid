@@ -6,7 +6,7 @@ var destinyScene : PackedScene = null
 var progress : float = 0.0;
 
 func _process(delta) -> void:
-	# progresso vai de 0.0 a 1.0 em um timer de 0.05s
+	# progresso vai de 0.0 a 1.0 em um timer de 0.02s
 	progress = move_toward(progress, 1.0, 0.02);
 	# altera o mudulate em a de acordo com o progress
 	$ColorRect.modulate.a = progress;

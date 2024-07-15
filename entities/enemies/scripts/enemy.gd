@@ -6,16 +6,18 @@ class_name Enemy
 @export var speed : float = 0.0;
 @export var compatible : EnemyResource;
 
-## variável que recebe a informação se o inimigo morreu ou não
+# variável que recebe a informação se o inimigo morreu ou não
 var isDeath : bool = false;
-## variável que controla o movimento do inimigo
+# variável que controla o movimento do inimigo
 var canMove : bool = true;
-## variável para ter uma referência ao player
+# variável para ter uma referência ao player
 @onready var player = null;
-## referência ao nó de animações do inimigo
+# referência ao nó de animações do inimigo
 @onready var animation := get_node("AnimatedSprite2D");
-## referência ao collisionShape2D do inimigo
+# referência ao collisionShape2D do inimigo
 @onready var colision := get_node("CollisionShape2D") as CollisionShape2D;
+# progresso em que a se da a visibilidade do player
+var progress : float = 0.0;
 
 func _ready() -> void:
 	# pega a referência do player que está na global
@@ -23,6 +25,9 @@ func _ready() -> void:
 	speed = Global.speedEnemy;
 	
 func _process(delta) -> void:
+	# inimigo nasce e sua visibilidade vai de 0 a 1 em um progresso de 0.02s
+	progress = move_toward(progress, 1.0, 0.02);
+	modulate.a = progress;
 	# chamada da função para o inimigo seguir o player
 	followPlayer();
 	# se o objeto poder se mover
