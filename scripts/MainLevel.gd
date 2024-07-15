@@ -66,7 +66,6 @@ func changePropieties() -> void:
 	Global.quantiiesyEnemies = _dict.get(_vectorKeys[currentMinute]).get("quantiiesyEnemies");
 	# a velocidade dos inimigos vai ser um informação que tem no dicionário de dificuldade de acordo com o minuto atual
 	Global.speedEnemy = _dict.get(_vectorKeys[currentMinute]).get("velocityEnemy");
-	print("alterada velocidade e spawners")
 
 ## função que instancia uma serie de inimigos baseado 
 func spawnEnemies() -> void:

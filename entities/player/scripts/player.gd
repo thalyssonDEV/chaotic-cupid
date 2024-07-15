@@ -81,5 +81,4 @@ func _on_kill_zone_body_entered(body):
 		Global.health -= 10;
 		# atualiza o valor do healhBar
 		Global.healthBar.value = Global.health;
-		print("life: ", Global.health)
-	
+

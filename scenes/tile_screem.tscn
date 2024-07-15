@@ -20,7 +20,7 @@ offset_bottom = 200.0
 script = ExtResource("1_ncdkv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.470588)
+modulate = Color(1, 1, 1, 0.164706)
 position = Vector2(175.664, 112)
 scale = Vector2(0.341141, 0.227005)
 texture = ExtResource("1_fij6e")

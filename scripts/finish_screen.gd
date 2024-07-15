@@ -1,7 +1,7 @@
 extends Control
 
 func _ready() -> void:
-	$Label.text = "Score total: " + str(Global.score);
+	$Controls/Label.text = "Score total: " + str(Global.score);
 
 ## função para voltar para o menu principal
 func _on_main_menu_pressed():

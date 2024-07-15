@@ -7,7 +7,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_i7n6d"]
 font = ExtResource("3_yhp4c")
-font_size = 20
+font_size = 22
 font_color = Color(0.403922, 1, 0.968627, 1)
 
 [node name="FinishScreen" type="Control"]
@@ -24,27 +24,10 @@ offset_bottom = 200.0
 color = Color(1, 1, 1, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.4)
+modulate = Color(1, 1, 1, 0.164706)
 position = Vector2(174, 112)
 scale = Vector2(0.348145, 0.22998)
 texture = ExtResource("1_04t1d")
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Score total:"
-label_settings = SubResource("LabelSettings_i7n6d")
-horizontal_alignment = 1
 
 [node name="Controls" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -54,11 +37,16 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -48.0
-offset_top = 20.0
+offset_top = -25.0
 offset_right = 48.0
-offset_bottom = 95.0
+offset_bottom = 73.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Label" type="Label" parent="Controls"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_i7n6d")
+horizontal_alignment = 1
 
 [node name="mainMenu" type="Button" parent="Controls"]
 layout_mode = 2
