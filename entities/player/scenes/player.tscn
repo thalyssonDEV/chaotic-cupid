@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://kgkbpmskjjvh"]
+[gd_scene load_steps=45 format=3 uid="uid://kgkbpmskjjvh"]
 
 [ext_resource type="Texture2D" uid="uid://cb34y0aknf3m1" path="res://entities/player/assets/anaimations/death/death_0.png" id="1_knwtq"]
 [ext_resource type="Script" path="res://entities/player/scripts/player.gd" id="1_vspos"]
@@ -39,6 +39,8 @@
 [ext_resource type="Texture2D" uid="uid://c8fcrgxw0fyhu" path="res://entities/player/assets/anaimations/walk/walk_6.png" id="36_c62hx"]
 [ext_resource type="Texture2D" uid="uid://cprju5s3a44qe" path="res://entities/player/assets/anaimations/walk/walk_7.png" id="37_cisjl"]
 [ext_resource type="Script" path="res://entities/player/scripts/Camera2D.gd" id="39_nmbtu"]
+[ext_resource type="Texture2D" uid="uid://b2ib35ga0dlty" path="res://assets/Bow and arrow/CupidBow.png" id="40_d0n6t"]
+[ext_resource type="Script" path="res://scripts/Bow.gd" id="41_e3v46"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bvyh1"]
 animations = [{
@@ -236,5 +238,15 @@ collision_mask = 2
 position = Vector2(0, -5)
 shape = SubResource("CapsuleShape2D_5l4rv")
 debug_color = Color(0.922333, 0.238604, 0.370672, 0.42)
+
+[node name="Pîvot" type="Marker2D" parent="."]
+position = Vector2(1, -4)
+script = ExtResource("41_e3v46")
+
+[node name="Bow" type="Sprite2D" parent="Pîvot"]
+texture_filter = 1
+position = Vector2(7, 2)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("40_d0n6t")
 
 [connection signal="body_entered" from="KillZone" to="." method="_on_kill_zone_body_entered"]

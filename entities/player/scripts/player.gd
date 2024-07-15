@@ -48,18 +48,14 @@ func enableAnimations() -> void:
 	# variável booleana para checar se o player está parado
 	var _isIdle: bool = velocity == Vector2.ZERO;
 	# variável booleana para checar se o player está correndo para a direita
-	var _isWalkToRight: bool = velocity.x > 0;
+	var _isLookingRight: bool = get_local_mouse_position().x > 0;
+	
+	animation.flip_h = false if _isLookingRight else true;
 	
 	# se o player não estiver parado
 	if !_isIdle:
-		# chaca se está andando para a direita
-		if _isWalkToRight:
-			animation.flip_h = false;   # direção do player: direita
-			animation.play("walk");
-		else:
-			animation.flip_h = true;    # direção do player: esquerda
-			animation.play("walk");
-	else:   # se não estiver parado
+		animation.play("walk");
+	else:   # se o player estiver parado
 		animation.play("idle");
 
 ## função responsável por efetuar a movimentação do player
@@ -72,8 +68,18 @@ func move(delta) -> void:
 func _on_kill_zone_body_entered(body):
 	# verificando se o corpo que entrou é de um inimigo
 	if is_instance_of(body, Enemy):
+		# damage flash effect
+		var _tween = get_tree().create_tween(); # cria um tween
+		_tween.tween_property(animation, "modulate", Color(100,0,0), 0.1);
+		_tween.tween_property(animation, "modulate", Color(1,1,1), 0.3);
+		
+		# se o player estiver com 50% de sua vida padrão
+		if Global.health <= 50:
+			Global.healthBar.modulate = Color(100, 0, 1);
+		
 		# decrementa a vida do player em -10
 		Global.health -= 10;
-	
-	
+		# atualiza o valor do healhBar
+		Global.healthBar.value = Global.health;
+		print("life: ", Global.health)
 	

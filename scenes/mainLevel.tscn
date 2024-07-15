@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://5krt14o2jkwj"]
+[gd_scene load_steps=29 format=3 uid="uid://5krt14o2jkwj"]
 
 [ext_resource type="Script" path="res://scripts/MainLevel.gd" id="1_3k2nr"]
 [ext_resource type="Texture2D" uid="uid://cqwcbiom1d1k8" path="res://map/TILES MAP/Texture/TX Plant.png" id="1_bmv4k"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://b5mjyuin7ow3j" path="res://scenes/control_timer.tscn" id="11_2qndo"]
 [ext_resource type="PackedScene" uid="uid://basr0km0fv272" path="res://scenes/messages.tscn" id="13_e3lrv"]
 [ext_resource type="Theme" uid="uid://blrklyi6uy61g" path="res://assets/themes/game_theme.tres" id="14_4x8ku"]
+[ext_resource type="StyleBox" uid="uid://0fjpv711y2th" path="res://assets/themes/bg_color_green.tres" id="14_28wui"]
+[ext_resource type="Script" path="res://scripts/HealthBar.gd" id="14_by5qe"]
 [ext_resource type="PackedScene" uid="uid://vn2778h06s0u" path="res://scenes/fade_out.tscn" id="15_qu7d2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d8duc"]
@@ -5734,6 +5736,9 @@ sources/6 = SubResource("TileSetAtlasSource_vak4s")
 sources/7 = SubResource("TileSetAtlasSource_cvg44")
 sources/8 = SubResource("TileSetAtlasSource_6egcq")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frx5p"]
+bg_color = Color(0, 0, 0, 1)
+
 [node name="MainLevel" type="Node2D"]
 script = ExtResource("1_3k2nr")
 metadata/_edit_vertical_guides_ = [772.0, 729.0, 725.0, 718.0]
@@ -5757,28 +5762,50 @@ position = Vector2(0, 0)
 
 [node name="ControlTimer" parent="Player" instance=ExtResource("11_2qndo")]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="Player"]
+
+[node name="HealthBar" type="ProgressBar" parent="Player/CanvasLayer"]
+offset_left = 90.0
+offset_top = 3.0
+offset_right = 160.0
+offset_bottom = 13.0
+theme_override_styles/background = SubResource("StyleBoxFlat_frx5p")
+theme_override_styles/fill = ExtResource("14_28wui")
+value = 50.0
+show_percentage = false
+script = ExtResource("14_by5qe")
+
 [node name="Shoots" type="Node2D" parent="."]
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Labels" type="CanvasLayer" parent="."]
 
-[node name="LabelErros" type="Label" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="Labels"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 16.0
+grow_horizontal = 2
+size_flags_vertical = 0
+color = Color(0, 0, 0, 0.454902)
+
+[node name="LabelErros" type="Label" parent="Labels"]
 offset_left = 250.0
 offset_right = 318.0
 offset_bottom = 23.0
 theme = ExtResource("14_4x8ku")
 
-[node name="LabelScore" type="Label" parent="CanvasLayer"]
-offset_left = 170.0
-offset_right = 238.0
+[node name="LabelScore" type="Label" parent="Labels"]
+offset_left = 180.0
+offset_right = 248.0
 offset_bottom = 23.0
 theme = ExtResource("14_4x8ku")
 
-[node name="LabelLife" type="Label" parent="CanvasLayer"]
-offset_left = 70.0
-offset_right = 138.0
+[node name="LabelLife" type="Label" parent="Labels"]
+offset_left = 44.0
+offset_right = 112.0
 offset_bottom = 23.0
 theme = ExtResource("14_4x8ku")
+text = "Health:"
 
 [node name="FadeOut" parent="." instance=ExtResource("15_qu7d2")]

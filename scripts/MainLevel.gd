@@ -8,17 +8,17 @@ var enemies :Dictionary = {
 }
 
 # referência a label de quantiade limite de limites de erros
-@onready var labelLimitErros = get_node("CanvasLayer/LabelErros") as Label;
+@onready var labelLimitErros = get_node("Labels/LabelErros") as Label;
 # referência ao label de score
-@onready var labelScore = get_node("CanvasLayer/LabelScore") as Label;
+@onready var labelScore = get_node("Labels/LabelScore") as Label;
 # referência ao label de vida
-@onready var labelLife = get_node("CanvasLayer/LabelLife") as Label;
+@onready var labelLife = get_node("Labels/LabelLife") as Label;
 
 # minuto atual do jogp
 var currentMinute: = 0;
 
 func _ready() -> void:
-	# pega referência ao grupo dos inimigos
+	# pega referência ao grupo dos inimigos	
 	var _groupeEnemies = get_node("Enemies");
 	# se esse no de inimigos possuir filhos
 	if _groupeEnemies.get_children().size() > 0:
@@ -30,6 +30,8 @@ func _ready() -> void:
 	Global.limitOfErros = 10;
 	# reseta a vida
 	Global.health = 100;
+	# restaura a vida total no healthBar
+	Global.healthBar.value = Global.health;
 	# reseta o score
 	Global.score = 0;
 	Global.mainLevel = self;
@@ -48,11 +50,9 @@ func _process(delta) -> void:
 		# muda a cor da font para vermelha, para alertar o player
 		labelLimitErros.add_theme_color_override("font_color", Color(1, 0, 0));
 	# colocando no label informação da quantidade de liite de erros
-	labelLimitErros.text = "limit erros: " + str(Global.limitOfErros);
+	labelLimitErros.text = "Limit erros: " + str(Global.limitOfErros);
 	# colocando no label a informação referent ao score do player
-	labelScore.text =  "score: " + str(Global.score);
-	# colocando no label a informação da vida do player
-	labelLife.text = "life: " + str(Global.health);
+	labelScore.text =  "Score: " + str(Global.score);
 
 ## função que altera as propieades de dificuldades do jogo
 func changePropieties() -> void:
