@@ -9,14 +9,14 @@ func _ready():
 	Global.controlTimer = self;
 	pass
 
-var seconds = 0
-var minutes = 0
+var seconds = 0;
+var minutes = 0;
 
 ## Verifica se o formato é válido, redefinindo os segundos quando forem iguais a 60, e adicionando 1 aos minutos
 func _process(delta):
 	if seconds > 59:
-		minutes += 1
-		seconds = 0
+		minutes += 1;
+		seconds = 0;
 		
 	# Define o formato em que o temporizador será exibido na tela
 	if seconds < 10 and minutes < 10:
@@ -31,10 +31,10 @@ func _process(delta):
 	
 ## Incrementa os segundos constantemente
 func _on_timer_timeout():
-	seconds += 1
+	seconds += 1;
 	# caso tenha passado 10 segundos, emita o sinal
 	if seconds % 10 == 0:
-		emit_signal("tenSecondsPassed")
+		emit_signal("tenSecondsPassed");
 		
 	if seconds == 59:
 		emit_signal("oneMinutePassed");
