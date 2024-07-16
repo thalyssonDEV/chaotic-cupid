@@ -45,6 +45,8 @@ func _on_body_entered(body):
 			
 			# se forem compatíevis
 			if _theTwoEnemiesIsCompatible:
+				# toca o efeito sonoro de acerto
+				Global.correctSound.play();
 				# incrementa o score
 				Global.score += 3;
 				# define a cor do label da mensagem como verde
@@ -60,6 +62,8 @@ func _on_body_entered(body):
 				return
 			
 			# caso não tenha sido a união correta
+			# toca o efeito sonoro de erro
+			Global.errorSound.play();
 			# chama função de tremer a camera
 			Global.camera.initAgitation(0.9, 0.6);
 			# define a cor do label da mensagem como vermelha

@@ -1,5 +1,11 @@
 extends Node2D
 
+# SOUNDS
+@onready var trackGame = get_node("TrackGame");
+@onready var clickSound = get_node("ClickMouse");
+@onready var errorSound = get_node("ErrorSound");
+@onready var correctSound = get_node("CorrectSound");
+
 # preloado da cena de fadeIn
 var fadeIn = preload("res://scenes/fade_in.tscn");
 
@@ -81,3 +87,7 @@ func changeScene(destinyScene:String) -> void:
 	_fadeinInstance.destinyScene = scenes.get(destinyScene);
 	# instancia a cena
 	add_child(_fadeinInstance);
+
+
+func _on_track_game_finished():
+	trackGame.play();

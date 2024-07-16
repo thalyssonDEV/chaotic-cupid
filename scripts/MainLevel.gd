@@ -14,10 +14,12 @@ var enemies :Dictionary = {
 # referência ao label de vida
 @onready var labelLife = get_node("Labels/LabelLife") as Label;
 
-# minuto atual do jogp
+# minuto atual do jogo
 var currentMinute: = 0;
 
 func _ready() -> void:
+	Global.trackGame.play();
+	#Global.trackGame.loop = true;
 	# pega referência ao grupo dos inimigos	
 	var _groupeEnemies = get_node("Enemies");
 	# se esse no de inimigos possuir filhos

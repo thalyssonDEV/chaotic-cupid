@@ -1,6 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1h0sspijx0uy"]
+[gd_scene load_steps=6 format=3 uid="uid://d1h0sspijx0uy"]
 
 [ext_resource type="Script" path="res://scripts/Global.gd" id="1_1nbf6"]
+[ext_resource type="AudioStream" uid="uid://vbfjqhmwoe2x" path="res://Sounds/track_game.mp3" id="2_5xcfu"]
+[ext_resource type="AudioStream" uid="uid://bxoriu4cpeoku" path="res://Sounds/click_button.mp3" id="3_5xmxo"]
+[ext_resource type="AudioStream" uid="uid://lmkovmgok7hj" path="res://Sounds/error_sound.mp3" id="4_fdqae"]
+[ext_resource type="AudioStream" uid="uid://d0qo6w11nmngs" path="res://Sounds/correctSound.mp3" id="5_5ncil"]
 
 [node name="Global" type="Node2D"]
 script = ExtResource("1_1nbf6")
+
+[node name="TrackGame" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_5xcfu")
+volume_db = -1.0
+
+[node name="ClickMouse" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_5xmxo")
+
+[node name="ErrorSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_fdqae")
+volume_db = 6.0
+
+[node name="CorrectSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_5ncil")
+volume_db = 6.0
+
+[connection signal="finished" from="TrackGame" to="." method="_on_track_game_finished"]
