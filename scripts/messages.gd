@@ -13,13 +13,25 @@ var messages : Dictionary = {
 		"💘 Amor à primeira vista!",
 		"💘 Você uniu um casal perfeito!",
 		"💘 Cupido arrasou!",
-		"💘 Louca paixão!"
+		"💘 Louca paixão!",
+		"💘 Cupido não erra!",
+		"💘 Amor verdadeiro detectado!",
+		"💘 Que casal lindo!",
+		"💘 Felicidade garantida!",
+		"💘 Mais um casal feliz!",
+		"💘 Amor eterno garantido!"
 	],
 	"wrongUnion" : [
 		"❌ Ops, tente novamente!",
 		"❌ Esse não é o par certo!",
 		"❌ Cuidado, você errou!",
-		"❌ Possue um outro amor"
+		"❌ Possue um outro amor",
+		"❌ Não foi dessa vez!",
+		"❌ Continue tentando!",
+		"❌ Esse par não deu certo!",
+		"❌ União falhou!",
+		"❌ Você errou, mas não desista!",
+		"❌ Esse par não combina!"
 	]
 }
 
