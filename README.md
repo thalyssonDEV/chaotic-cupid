@@ -1,35 +1,35 @@
 # Chaotic-Cupid
 
-**Descrição**  
-**Chaotic Cupid** é um jogo desenvolvido para a 2ª **GameJam interna** no Laboratório de Robótica, Automação e Sistemas (LABIRAS). O objetivo do jogo é simples: o jogador controla um **cupido** que deve atirar flechas em inimigos que se aproximam dele, com cores específicas. Ao acertar **pares de inimigos da mesma cor**, os inimigos desaparecem, e o jogador ganha pontos. O objetivo principal é **sobreviver o maior tempo possível** e evitar ser atingido pelos inimigos.
+**Description**  
+**Chaotic Cupid** is a game developed for the 2nd **internal GameJam** at the Laboratory of Robotics, Automation, and Systems (LABIRAS). The objective of the game is simple: the player controls a **cupid** who must shoot arrows at enemies that approach him, with specific colors. When hitting **pairs of enemies of the same color**, the enemies disappear, and the player earns points. The main objective is to **survive as long as possible** and avoid being hit by the enemies.
 
-## Modo de Jogo
+## Game Mode
 
-O jogo se passa em um campo onde o **cupido** (personagem principal) está no centro. Inimigos de diferentes cores começam a aparecer aleatoriamente e caminham em direção ao cupido. O jogador deve atirar **flechas** nos inimigos, acertando **pares de inimigos da mesma cor**, para eliminá-los. Cada par eliminado concede pontos e ajuda o cupido a sobreviver por mais tempo.
+The game takes place in a field where the **cupid** (main character) is in the center. Enemies of different colors start to appear randomly and walk toward the cupid. The player must shoot **arrows** at the enemies, hitting **pairs of enemies of the same color**, to eliminate them. Each pair eliminated grants points and helps the cupid survive for a longer time.
 
-### Regras:
-- Atire em inimigos de **cores iguais** para eliminá-los.
-- Inimigos de cores diferentes não podem ser eliminados juntos, o que aumenta a dificuldade.
-- O objetivo é **sobreviver o maior tempo possível**, enquanto enfrenta um número crescente de inimigos.
-- O jogo termina quando os inimigos alcançam o cupido e sua vida chega a zero.
+### Rules:
+- Shoot at enemies of **the same color** to eliminate them.
+- Enemies of different colors cannot be eliminated together, which increases the difficulty.
+- The goal is to **survive as long as possible** while facing an increasing number of enemies.
+- The game ends when the enemies reach the cupid and his life reaches zero.
 
-## Mecânicas
+## Mechanics
 
-- **Controle**: O cupido é controlado pelo jogador com as setas do teclado (ou mouse) e pode atirar flechas em qualquer direção.
-- **Inimigos**: Inimigos aparecem aleatoriamente em direções variadas e vão em direção ao cupido. Eles têm **cores aleatórias** e devem ser eliminados em pares da mesma cor.
-- **Pontos**: Cada vez que o jogador elimina um par de inimigos da mesma cor, ele ganha pontos.
+- **Controls**: The cupid is controlled by the player using the arrow keys (or mouse) and can shoot arrows in any direction.
+- **Enemies**: Enemies appear randomly from different directions and move toward the cupid. They have **random colors** and must be eliminated in pairs of the same color.
+- **Points**: Every time the player eliminates a pair of enemies of the same color, they earn points.
 
-## Tecnologias Utilizadas
+## Technologies Used
 
-- **Godot Engine**: Motor de jogo utilizado para o desenvolvimento do projeto.
-- **GDScript**: Linguagem de programação utilizada para a implementação das mecânicas do jogo.
-- **Arte**: A arte do jogo foi feita dentro da equipe com recursos internos e gratuitos.
-- **Áudio**: Sons e efeitos sonoros criados ou licenciados para o jogo.
+- **Godot Engine**: Game engine used for the development of the project.
+- **GDScript**: Programming language used to implement the game mechanics.
+- **Art**: The game's art was created within the team using internal and free resources.
+- **Audio**: Sounds and sound effects created or licensed for the game.
 
-## Como Jogar
+## How to Play
 
-1. **Iniciar o Jogo**: Após carregar o jogo, o cupido aparecerá no centro da tela. O jogador pode mover o cupido utilizando as teclas de setas ou o mouse.
-2. **Atirar Flechas**: Pressione o botão esquerdo do mouse para lançar uma flecha em direção aos inimigos, a flecha será direcionada para onde o cursor do mouse estiver apontando.
-3. **Eliminar Inimigos**: Tente eliminar pares de inimigos da **mesma cor** para ganhar pontos.
-4. **Sobreviver**: Confome o tempo passa, o jogo se torna mais difícil, com inimigos mais rápidos e em maior número.
-5. **Fim do Jogo**: O jogo termina quando o cupido é alcançado pelos inimigos e sua vida zera. O objetivo é **sobreviver o maior tempo possível**.
+1. **Start the Game**: After loading the game, the cupid will appear at the center of the screen. The player can move the cupid using the arrow keys or the mouse.
+2. **Shoot Arrows**: Press the left mouse button to shoot an arrow toward the enemies; the arrow will be directed where the mouse cursor is pointing.
+3. **Eliminate Enemies**: Try to eliminate pairs of enemies of the **same color** to gain points.
+4. **Survive**: As time passes, the game becomes more difficult, with faster enemies and greater numbers.
+5. **End of the Game**: The game ends when the cupid is reached by the enemies and his life reaches zero. The goal is to **survive as long as possible**.
